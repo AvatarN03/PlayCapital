@@ -63,7 +63,7 @@ const Authorization = () => {
     e.preventDefault();
     console.log(login);
 
-    const response = await axios.post(`${import.meta.env.VITE_API_URI}/api/login`, login);
+    const response = await axios.post(`${import.meta.env.VITE_API_URI}api/login`, login);
     if (response.data.isSuccess) {
       setError("");
       setMessage('Login successful!');
@@ -107,7 +107,7 @@ const Authorization = () => {
         console.log(`${key}: ${value}`);
       }
       
-        const response = await axios.post(`${import.meta.env.VITE_API_URI}/api/signup`, formData,{
+        const response = await axios.post(`${import.meta.env.VITE_API_URI}api/signup`, formData,{
           headers: {
             'Content-Type':'multipart/form-data'  
           },
