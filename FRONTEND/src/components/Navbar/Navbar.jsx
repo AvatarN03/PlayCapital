@@ -1,0 +1,133 @@
+import React, { useContext, useState } from 'react'
+import { Article, Home, Info, MailOutline, Person, Menu, Close } from '@mui/icons-material';
+import Logo from '../Logo/Logo';
+import { Link } from 'react-router-dom';
+import { userContext } from '../../context/userContext';
+import { Avatar } from '@mui/material';
+
+
+
+function Navbar() {
+
+  const [menu, setMenu] = useState(false);
+  const { auth, setAuth } = useContext(userContext);
+  const [profile, setProfile] = useState(false);
+  const handleMenu = () => {
+    setMenu(prev => !prev)
+  }
+
+  const navItems = [
+    { url: '/', title: 'Home', icon: <Home style={{ color: 'white' }} /> },
+    { url: '/about', title: 'About', icon: <Info style={{ color: 'white' }} /> },
+    { url: '/features', title: 'Features', icon: <Person style={{ color: 'white' }} /> },
+
+    { url: '/blog', title: 'Blog', icon: <Article style={{ color: 'white' }} /> },
+
+
+  ]
+
+
+
+
+  return (
+    <header className='flex justify-between items-center bg-rose-200 px-3 py-5 lg:h-28 md:h-24 sm:h-20 h-16 relative z-10'>
+      <Logo />
+      <div className="flex justify-between items-center ">
+
+        <nav className="hidden sm:block">
+          <ul className='flex sm:gap-4 md:gap-12  justify-between items-center'>
+            {navItems.map((nav) => (
+              <li key={nav.title} className=' group transform'>
+                <Link to={nav.url} className='flex gap-2 text-sm justify-center  items-center '>
+                  <p className='group-hover:block hidden transition-all duration-200 ease-in-out group-hover:bg-fourth p-2 rounded-full'>
+                    {nav.icon && nav.icon}
+                  </p>
+                  <p className='transition-all duration-300 ease-in-out relative py-1 sm:text-base
+                   md:text-lg group-hover:text-sm group-hover:scale-90 
+                   after:absolute after:left-0 after:bottom-0 after:h-[1.8px] 
+                   after:w-0 after:bg-secondary 
+                   after:transition-all after:duration-300 after:ease 
+                   group-hover:after:w-full'>
+                    {nav.title}
+                  </p>
+                </Link>
+              </li>
+
+
+            ))}
+            
+          </ul>
+        </nav>
+
+
+        {Object.keys(auth).length ? ( // Check if auth has any keys
+          <div className='mx-8 border-rose-900 border-2 rounded-full relative cursor-pointer' onClick={()=> setProfile(prev => !prev)}>
+            <Avatar alt="User Avatar" src={auth? auth.user.avatar : "https:400x600.in"} />
+            {
+              profile? 
+              <div className="absolute top-10 right-0 w-[200px] bg-white p-5 rounded-md shadow-xl">
+                <div className="flex gap-4 flex-col">
+                  <img src={auth? auth.user.avatar : "https:400x600.in"} alt="" className="w-10 h-10 rounded-full" />
+                  <p>{auth? auth.user.username : 'User'}</p>
+                  <p>{auth? auth.user.email : 'User'}</p>
+                  {/* <p>{auth? auth.score : 'Score: 950'}</p> */}
+                  <p>Score: 950</p>
+                  <Link to="/logout" className="text-rose-900 text-sm bg-rose-100 p-1 px-3 cursor-pointer">Logout</Link>
+                </div>
+              </div>
+              : null
+            }
+
+          </div>
+        ) : (
+          <button className='text-xs sm:text-base mx-5 bg-neutral-100 px-2 py-[5px] sm:px-3 md:px-5 rounded-lg'>
+            <Link to={'/authorization'}>
+              <p className=' flex flex-col text-fourth '>
+                <span className='font-bold text-inherit'>Login/</span>
+                <span className='underline font-bold'>SignUp</span>
+              </p>
+            </Link>
+          </button>
+        )}
+
+
+        <div className="relative">
+          {/* Menu Button */}
+          <div className="w-8 h-8 flex items-center cursor-pointer sm:hidden" onClick={handleMenu}>
+            {menu ? (
+              <Close className="transition-transform duration-200 ease-in-out" />
+            ) : (
+              <Menu className="transition-transform duration-200 ease-in-out" />
+            )}
+          </div>
+        </div>
+
+        {/* Menu */}
+        <div
+          className={`absolute top-full left-0 w-full shadow-xl backdrop-blur-lg text-rose-300 bg-blue-500 bg-opacity-30 transition-all duration-300 ease-in z-40 
+      ${menu ? 'h-[90vh] opacity-100 overflow-auto' : 'h-0 overflow-hidden opacity-0'}
+    `}
+        >
+          <ul className='h-[90%] w-full my-2 flex justify-between py-5 items-center flex-col z-30'>
+            { 
+              navItems.map((nav) => (
+                <li key={nav.title} className='w-[80%] mx-auto'>
+                  <Link to={nav.url} className='flex justify-between items-center w-full h-fit py-3 text-white'>
+                    <p className='text-xl'>{nav.icon && nav.icon}</p>
+                    <p className='text-3xl'>{nav.title}</p>
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+
+
+
+    </header>
+  )
+}
+
+export default Navbar

@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+  }
+
+  /* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar for horizontal scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #9a0eb6; /* Background of the scrollbar track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8a2be2, #4b0082); /* Purple gradient */
+  border-radius: 10px; /* Rounded corners for the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #6a0dad, #3d0c6e); /* Darker gradient on hover */
+}
+
+/* Optional: Style the horizontal scrollbar */
+::-webkit-scrollbar-horizontal {
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+
+  .heading {
+    
+    /* background: url("https://imgs.search.brave.com/zbGn27-9whn_wHBFf1bZxeeVPA5mtE3Fn5T6rC_yR6I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/NzI0NjgzOC9waG90/by9hYnN0cmFjdC1i/aWctZGF0YS1yZXBy/ZXNlbnRhdGlvbi1p/bi1yZWQtY29sb3It/d2l0aC1iaW5hcnkt/bnVtYmVycy1hbmQt/M2QtY3ViZS1zaGFw/ZXMud2VicD9hPTEm/Yj0xJnM9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXVMcXRMelo1alQ3/UEFfMmxNYUU2Wk5L/NjlSWHo5RFF4X283/Rm1oVUxfa1k9") no-repeat center; */
+    background: linear-gradient(to right bottom, teal,  green);
+    background-size: cover; /* Adjust this depending on your needs */
+    color: transparent; /* Makes the text transparent so the background is visible */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    background-clip: text; /* For Firefox support */
+}
+
+
+
+.grid-headtext{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(to right bottom, purple, pink red);
+}
+.grid-subtext{
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+
+}
+
+@media (max-width: 786px) {
+
+  .grid-headtext{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    background: linear-gradient(to right bottom, purple, pink red);
+  }
+  .grid-subtext{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+  
+  }
+  
+}
+@media (max-width: 586px) {
+
+  .grid-headtext{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    background: linear-gradient(to right bottom, purple, pink red);
+  }
+  .grid-subtext{
+    font-size: .8rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+  
+  }
+  
+}
+@media (max-width: 480px) {
+
+  .grid-headtext{
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    background: linear-gradient(to right bottom, purple, pink red);
+  }
+  .grid-subtext{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+  
+  }
+  
+}
