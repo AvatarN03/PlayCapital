@@ -18,7 +18,10 @@ const app = express();
 // The Port where the backend i.e. Server is running
 const port = 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://play-capital-front.vercel.app', // Replace with your frontend URL
+  credentials: true,
+}));
 //The enable the file transfer 
 app.use(express.urlencoded({extended:true}));
 // Enable the form format 
