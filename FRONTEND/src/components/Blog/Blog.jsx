@@ -50,7 +50,7 @@ const Blog = () => {
 
 
   return (
-    <div className="bg-rose-500 py-24 sm:py-32">
+    <div className="bg-white bg-opacity-20 backdrop-blur-md py-24 sm:py-32 min-h-screen">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto w-full rounded-xl lg:mx-0 bg-rose-200/80 p-8">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Capital Blog</h2>
@@ -66,10 +66,10 @@ const Blog = () => {
                 <option value={option.topic} key={option.id}>{option.topic}</option>
               ))}
             </select>
-            <button className="bg-secondary py-2 px-1  rounded flex justify-center gap-1 items-center">
-              <Add />
-              <Link to={"/createpost"}>Create a Blog</Link>
-            </button>
+            <Link to={"/createpost"} className="bg-[#5827B7] p-2  text-white  rounded flex justify-center gap-1 items-center">
+              <Add style={{color:"#eee"}} />
+              <h4  >Create a Blog</h4>
+            </Link>
           </div>
           {posts.length > 0 ? (
             posts.map((post) => (

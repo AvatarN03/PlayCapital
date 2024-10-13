@@ -81,12 +81,12 @@ const MainApp = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/features" element={<Features />} />
+              <Route path="/blog" element={<Blog />} />
 
             {/* The routes inside of the header & footer and secure  */}
 
             {/* Private routes */}
             <Route element={<PrivateRoute />}>
-              <Route path="/blog" element={<Blog />} />
               <Route path="/post/:id" element={<ViewPost />} />
             </Route>
           </Route>

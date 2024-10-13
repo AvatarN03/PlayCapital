@@ -10,15 +10,15 @@ const Features = () => {
           <h2 className="mt-6 text-3xl font-semibold leading-8 text-white sm:text-4xl lg:text-5xl">
             Features
           </h2>
-          <p className="mt-4 text-3xl font-light leading-10 text-slate-300">
+          <p className="mt-4 text-xl sm:text-2xl  md:text-3xl  font-light leading-10 text-slate-300">
             The Benefits of using our product
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-1 grid-rows-4 gap-y-8 text-center sm:grid-cols-2 sm:grid-rows-3 sm:gap-12 lg:grid-cols-3 lg:grid-rows-2 border-white border-2 rounded-xl p-2 sm:p-10 backdrop-blur-lg">
+        <div className="mt-12 grid grid-cols-1 grid-rows-4 gap-y-8 text-center sm:grid-cols-2 sm:grid-rows-3 sm:gap-12 lg:grid-cols-3 lg:grid-rows-2 border-none  sm:border-white border-2 rounded-xl p-2 sm:p-6 md:p-10 backdrop-blur-lg">
           {/* Card 1 */}
-          <div className='col-span-full sm:col-span-1 feature p-4 rounded-md flex flex-col justify-between min-h-full'>
+          <div className='col-span-full sm:col-span-1 feature p-4 rounded-md flex flex-col justify-between min-h-full border-2 border-slate-200'>
             <div>
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-third">
+              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full shadow-md shadow-red-500 ">
                 <img src="/assets/quiz.png" alt="" />
               </div>
               <h3 className="mt-8 text-2xl font-semibold text-white">Quiz Game</h3>
@@ -32,7 +32,7 @@ const Features = () => {
           </div>
 
           {/* Card 2 */}
-          <div className='col-span-full sm:col-span-1 feature p-4 rounded-md flex flex-col justify-between min-h-full'>
+          <div className='col-span-full sm:col-span-1 feature p-4 rounded-md flex flex-col justify-between min-h-full border-2 border-slate-200'>
             <div>
               <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
               <img src="/assets/memory.png" alt="" />
@@ -48,7 +48,7 @@ const Features = () => {
           </div>
 
           {/* Card 3 */}
-          <div className='col-span-full sm:col-span-2 lg:col-span-1 feature p-4 rounded-md flex flex-col justify-between min-h-full'>
+          <div className='col-span-full sm:col-span-2 lg:col-span-1 feature p-4 rounded-md flex flex-col justify-between min-h-full border-2 border-slate-200'>
             <div>
               <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
               <img src="/assets/rule.png" alt="" />
@@ -64,7 +64,7 @@ const Features = () => {
           </div>
 
           {/* Card 4 */}
-          <div className='col-span-full feature p-4 rounded-md flex flex-col justify-between min-h-full'>
+          <div className='col-span-full feature p-4 rounded-md flex flex-col justify-between min-h-full border-2 border-slate-200'>
             <div>
               <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
               <img src="/assets/monoplo.png" alt="" />

@@ -83,7 +83,7 @@ function Navbar() {
 
         {/* Menu */}
         <div
-          className={`absolute top-full left-0 w-full  sm:hidden  backdrop-blur-sm text-rose-300 bg-[#BF4C8B] bg-opacity-30 transition-all duration-300 ease-in z-[200px] 
+          className={`absolute top-full left-0 w-full  sm:hidden  backdrop-blur-3xl text-rose-300 bg-[#BF4C8B] bg-opacity-70 transition-all duration-300 ease-in z-[200px] 
       ${menu ? 'h-fit opacity-100 overflow-auto' : 'h-0 overflow-hidden opacity-0'}
     `}
         >
