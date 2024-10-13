@@ -54,3 +54,30 @@ export const featuresDetails = [
 
     }
 ]
+
+export const navItems = [
+    { url: '/', title: 'Home' },
+    { url: '/features', title: 'Features' },
+    { url: '/blog', title: 'Blog' }
+  ]
+
+  export const features = [
+    {
+      name: 'Play Money',
+      description:
+        'Our Platform provides the Learning experience uniqulty.',
+      icon: "Money",
+    },
+    {
+      name: 'Fun',
+      description:
+        'Our Platform provides the Learning experience by Introducing the 3 games ',
+      icon: "Extension",
+    },
+    {
+      name: 'Reliable ',
+      description:
+        'Our Platform is reliable and secure with authentication',
+      icon: "LockOpen",
+    },
+  ]

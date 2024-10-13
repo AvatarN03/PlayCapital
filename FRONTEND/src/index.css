@@ -45,14 +45,55 @@
 }
 
 
-  .heading {
-    
-    /* background: url("https://imgs.search.brave.com/zbGn27-9whn_wHBFf1bZxeeVPA5mtE3Fn5T6rC_yR6I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/NzI0NjgzOC9waG90/by9hYnN0cmFjdC1i/aWctZGF0YS1yZXBy/ZXNlbnRhdGlvbi1p/bi1yZWQtY29sb3It/d2l0aC1iaW5hcnkt/bnVtYmVycy1hbmQt/M2QtY3ViZS1zaGFw/ZXMud2VicD9hPTEm/Yj0xJnM9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXVMcXRMelo1alQ3/UEFfMmxNYUU2Wk5L/NjlSWHo5RFF4X283/Rm1oVUxfa1k9") no-repeat center; */
-    background: linear-gradient(to right bottom, teal,  green);
-    background-size: cover; /* Adjust this depending on your needs */
-    color: transparent; /* Makes the text transparent so the background is visible */
-    -webkit-background-clip: text; /* Clips the background to the text */
-    background-clip: text; /* For Firefox support */
+
+
+body{
+  background-image: linear-gradient(
+    230deg,
+    hsl(295deg 50% 44%) 0%,
+    hsl(292deg 51% 43%) 4%,
+    hsl(289deg 52% 42%) 8%,
+    hsl(286deg 54% 41%) 13%,
+    hsl(283deg 55% 39%) 18%,
+    hsl(279deg 57% 38%) 24%,
+    hsl(276deg 58% 37%) 31%,
+    hsl(273deg 59% 36%) 40%,
+    hsl(269deg 61% 34%) 49%,
+    hsl(265deg 62% 33%) 61%,
+    hsl(261deg 64% 32%) 73%,
+    hsl(256deg 65% 31%) 86%,
+    hsl(251deg 67% 29%) 100%
+  );
+  /* background: rgb(71,7,60);
+background: linear-gradient(135deg, rgba(71,7,60,0.9962359943977591) 15%, rgba(121,11,158,1) 52%, rgba(217,16,140,1) 100%); */
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+.nav{
+  background-color: #4c228aa1;
+  backdrop-filter: blur(15px);
+  
+
+}
+.active{
+  color: pink;
+}
+
+/* Add this in your CSS file */
+.clip-path-custom {
+  clip-path: polygon(88% 0, 100% 0, 79% 100%, 57% 91%, 23% 100%, 10% 70%);
+}
+
+.clip-path-hover:hover {
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%); /* Define your hover shape */
+}
+
+.feature{
+  background: rgb(71,7,60);
+background: linear-gradient(135deg, rgba(71,7,60,0.9962359943977591) 15%, rgba(121,11,158,1) 52%, rgba(217,16,140,1) 100%);
 }
 
 
