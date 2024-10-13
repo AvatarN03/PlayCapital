@@ -18,7 +18,17 @@ const app = express();
 // The Port where the backend i.e. Server is running
 const port = 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://play-capital-front.vercel.app', // Your frontend URL
+  methods: ['GET', 'POST', 'PUT'], // Specify allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+  credentials: true, // If using cookies or authentication
+}));
+
+// Handle preflight requests (OPTIONS method)
+app.options('*', cors());
+
+
 //The enable the file transfer 
 app.use(express.urlencoded({extended:true}));
 // Enable the form format 
