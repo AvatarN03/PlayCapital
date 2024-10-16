@@ -10,7 +10,7 @@ const Features = () => {
           <h2 className="mt-6 text-3xl font-semibold leading-8 text-white sm:text-4xl lg:text-5xl">
             Features
           </h2>
-          <p className="mt-4 text-xl sm:text-2xl  md:text-3xl  font-light leading-10 text-slate-300">
+          <p className="mt-4 font-normal text-xl sm:text-2xl  md:text-3xl  sm:font-light leading-10 text-slate-300">
             The Benefits of using our product
           </p>
         </div>

@@ -25,8 +25,8 @@ const Home = () => {
 
           <div className="max-w-7xl flex flex-col gap-7 items-start justify-between h-full sm:m-8">
 
-            <h1 className='md:text-5xl text-2xl sm:text-4xl lg:text-7xl bg-gradient-to-l  bg-clip-text text-transparent from-[#123575] to-[#AFEFEC] tracking-widest mb-6 font-semibold '>Master Your Capital <span className='text-slate-300/50'>Base </span></h1>
-            <p className='w-30 sm:w-2/3 md:w-1/2 font-light  text-left text-slate-200  text-xs sm:text-base md:text-lg lg:text-xl tracking-wider leading-6 sm:leading-10' >
+            <h1 className='md:text-5xl text-5xl tracking-wide sm:text-4xl lg:text-7xl bg-gradient-to-l  bg-clip-text text-transparent from-[#123575] to-[#AFEFEC] sm:tracking-widest mb-6 font-semibold '>Master Your Capital <span className='text-slate-300/50'>Base </span></h1>
+            <p className='w-30 sm:w-2/3 md:w-1/2 font-light  text-left text-slate-200  text-2xl sm:text-base md:text-lg lg:text-xl sm:tracking-wider  sm:leading-10' >
               Embark on a financial journey with interactive quizzes and engaging flashcards. Master the rules of finance while enjoying a fun and competitive game experience!
             </p>
            

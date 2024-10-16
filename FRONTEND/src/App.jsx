@@ -14,6 +14,7 @@ import IncomeBracket from './components/RuleTheBoard/IncomeBracket';
 import Game3ConnectingLink from './components/RuleTheBoard/Game3ConnectingLink';
 import Quiz from './components/QuizGame/Quiz';
 import { CircularProgress } from '@mui/material';
+import Authenticate from './components/Authenticate/Authenticate';
 
 
 // Lazy load components
@@ -98,7 +99,8 @@ const MainApp = () => {
           </Route>
 
           <Route path="/logout" element={<Logout />} />
-          <Route path="/authorization" element={<Authorization />} />
+          {/* <Route path="/authorization" element={<Authorization />} /> */}
+          <Route path="/authorization" element={<Authenticate />} />
 
 
 

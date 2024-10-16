@@ -111,6 +111,32 @@ background: linear-gradient(135deg, rgba(71,7,60,0.9962359943977591) 15%, rgba(1
 
 }
 
+.auth_bg{
+  height: 100vh; 
+  margin: 0; 
+    background: linear-gradient(-60deg, #2B197D 30%, #562780 42%, #2B197D 96%);
+    background-size: 200% 200%;
+    animation: moveBackground 5s alternate infinite;
+  }
+  
+  @keyframes moveBackground {
+    0% {
+      background-position: -100 -100%; 
+    }
+    100% {
+      background-position: 100% 100%; 
+    }
+  }
+
+.auth_ui{
+  background: linear-gradient(-45deg, #2C197E, #502DE4);
+}
+.auth_comp_ui{
+  background: linear-gradient( #5014C9, #682587);
+}
+  
+
+
 @media (max-width: 786px) {
 
   .grid-headtext{
