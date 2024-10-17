@@ -25,7 +25,7 @@ const Home = () => {
 
           <div className="max-w-7xl flex flex-col gap-7 items-start justify-between h-full sm:m-8">
 
-            <h1 className='md:text-5xl text-5xl tracking-wide sm:text-4xl lg:text-7xl bg-gradient-to-l  bg-clip-text text-transparent from-[#123575] to-[#AFEFEC] sm:tracking-widest mb-6 font-semibold '>Master Your Capital <span className='text-slate-300/50'>Base </span></h1>
+            <h1 className='md:text-7xl text-5xl tracking-wide  bg-gradient-to-l  bg-clip-text text-transparent from-[#123575] to-[#AFEFEC] sm:tracking-widest mb-6 font-semibold z-10 '>Master Your Capital <span className='text-slate-300/50'>Base </span></h1>
             <p className='w-30 sm:w-2/3 md:w-1/2 font-light  text-left text-slate-200  text-2xl sm:text-base md:text-lg lg:text-xl sm:tracking-wider  sm:leading-10' >
               Embark on a financial journey with interactive quizzes and engaging flashcards. Master the rules of finance while enjoying a fun and competitive game experience!
             </p>
@@ -50,9 +50,9 @@ const Home = () => {
               <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
                 <div className="mx-auto mt-16 w-full sm:mt-20 lg:mt-24 ">
-                  <dl className="grid max-w-xl grid-cols-1 min-h-80  gap-10 lg:max-w-none lg:grid-cols-3">
+                  <dl className="grid max-w-xl grid-cols-1  mx-auto  gap-10 lg:max-w-none lg:grid-cols-3">
                     {features.map((feature) => (
-                      <div key={feature.name} className="relative flex justify-evenly flex-col items-center p-6 feature rounded-xl border-2 border-slate-300 cursor-crosshair">
+                      <div key={feature.name} className="relative min-h-[200px] md:min-h-[500px] flex justify-evenly flex-col items-center p-6 feature rounded-xl border-2 border-slate-300 cursor-crosshair">
                         <dt className="font-semibold leading-7  text-white text-3xl">
                           
                           {feature.name}

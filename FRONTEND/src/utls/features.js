@@ -81,3 +81,55 @@ export const navItems = [
       icon: "LockOpen",
     },
   ]
+
+  export const memberNames = [
+    {
+      name: "Manasvi Shirshat",
+      image:"/assets/naidu.jpg",
+      desc: "Hi, I am a good Girl",
+      social: {
+        linked: "kfdkfjkdlfjkdjfjfkljdf",
+        insta: "kfdkfjkdlfjkdjfjfkljdf",
+        twitter: "kfdkfjkdlfjkdjfjfkljdf",
+  
+  
+      }
+    },
+    {
+      name: "Chirag Dulera",
+      image:"/assets/naidu.jpg",
+      desc: "lorembfjfjhfffkjkfj",
+      social: {
+        linked: "kfdkfjkdlfjkdjfjfkljdf",
+        insta: "kfdkfjkdlfjkdjfjfkljdf",
+        twitter: "kfdkfjkdlfjkdjfjfkljdf",
+  
+  
+      }
+    },
+    {
+      name: "Prashanth Naidu",
+      image:"/assets/naidu.jpg",
+      desc: "lorembfjfjhfffkjkfj",
+      social: {
+        linked: "kfdkfjkdlfjkdjfjfkljdf",
+        insta: "kfdkfjkdlfjkdjfjfkljdf",
+        twitter: "kfdkfjkdlfjkdjfjfkljdf",
+  
+  
+      }
+    },
+    {
+      name: "Praniti Kubal",
+      image:"/assets/naidu.jpg",
+      desc: "lorembfjfjhfffkjkfj",
+      social: {
+        linked: "kfdkfjkdlfjkdjfjfkljdf",
+        insta: "kfdkfjkdlfjkdjfjfkljdf",
+        twitter: "kfdkfjkdlfjkdjfjfkljdf",
+  
+  
+      }
+    },
+  ]
+  

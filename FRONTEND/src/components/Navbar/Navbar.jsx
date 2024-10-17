@@ -61,10 +61,10 @@ function Navbar() {
           </div>
         ) : (
 
-          <Link to={'/authorization'} className='text-xs sm:text-base mx-2 block bg-neutral-100 px-2 py-[5px] sm:px-3 md:px-5 rounded-lg'>
+          <Link to={'/authorization'} className='text-xs  mx-2 block bg-neutral-100 px-2 py-[5px] sm:px-3 md:px-5 rounded-lg'>
             <p className=' flex flex-col text-fourth '>
-              <span className='font-bold text-inherit'>Login/</span>
-              <span className='underline font-bold'>SignUp</span>
+              <span className='font-semibold text-inherit'>Login/</span>
+              <span className='underline font-medium'>SignUp</span>
             </p>
           </Link>
 

@@ -34,7 +34,7 @@ const Features = () => {
           {/* Card 2 */}
           <div className='col-span-full sm:col-span-1 feature p-4 rounded-md flex flex-col justify-between min-h-full border-2 border-slate-200'>
             <div>
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
+              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full shadow-md shadow-red-500">
               <img src="/assets/memory.png" alt="" />
               </div>
               <h3 className="mt-8 text-2xl font-semibold text-white">Memory Flash</h3>
@@ -50,7 +50,7 @@ const Features = () => {
           {/* Card 3 */}
           <div className='col-span-full sm:col-span-2 lg:col-span-1 feature p-4 rounded-md flex flex-col justify-between min-h-full border-2 border-slate-200'>
             <div>
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
+              <div className="mx-auto flex h-20 w-20 items-center justify-center shadow-md shadow-red-500">
               <img src="/assets/rule.png" alt="" />
               </div>
               <h3 className="mt-8 text-2xl font-semibold text-white">Rule Board</h3>
@@ -66,7 +66,7 @@ const Features = () => {
           {/* Card 4 */}
           <div className='col-span-full feature p-4 rounded-md flex flex-col justify-between min-h-full border-2 border-slate-200'>
             <div>
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
+              <div className="mx-auto flex h-20 w-20 items-center justify-center shadow-md shadow-red-500">
               <img src="/assets/monoplo.png" alt="" />
               </div>
               <h3 className="mt-8 text-2xl font-semibold text-white">Monopoly</h3>

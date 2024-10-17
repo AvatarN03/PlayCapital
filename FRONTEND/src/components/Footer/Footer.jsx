@@ -25,7 +25,7 @@ export function Footer() {
       <hr className="my-8 w-[88%] h-[5px] bg-[#BF4C8B] mx-auto" />
 
       {/* footer second part  */}
-      <div className="mx-auto flex max-w-6xl justify-between  items-start sm:items-center">
+      <div className="mx-auto flex max-w-6xl justify-between  items-start sm:items-center px-2">
   {/* Address Section */}
   <div className=" pl-3 flex flex-col justify-around h-full  text-slate-300 md:leading-10">
     <p className=" text-base sm:text-lg font-semibold text-slate-200 mb-6 leading-6">Address:</p>

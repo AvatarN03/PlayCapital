@@ -50,23 +50,23 @@ const Blog = () => {
 
 
   return (
-    <div className="bg-white bg-opacity-20 backdrop-blur-md py-24 sm:py-32 min-h-screen">
+    <div className="bg-white bg-opacity-20 backdrop-blur-md py-4 sm:py-32 min-h-screen">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto w-full rounded-xl lg:mx-0 bg-rose-200/80 p-8">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Capital Blog</h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
+        <div className="mx-auto w-full rounded-xl lg:mx-0 bg-rose-200/80 p-5">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Capital Blog</h2>
+          <p className="mt-2 text-base sm:text-lg leading-8 text-gray-600">
             Learn and Get the Trends of the Money in World
           </p>
         </div>
         <div className="mx-auto mt-10 flex flex-col gap-12">
-          <div className="w-full min-h-4 flex justify-between items-center">
-            <select name="topic" id="topic" className="p-3 rounded-md bg-rose-100/50 cursor-pointer" onChange={changePost}>
+          <div className="w-full min-h-4 flex justify-between gap-4 items-center">
+            <select name="topic" id="topic" className="p-3 rounded-md w-[100px] sm:w-auto bg-rose-100/50 cursor-pointer outline-none" onChange={changePost}>
               <option value="All" defaultValue>All</option>
               {options.map((option) => (
                 <option value={option.topic} key={option.id}>{option.topic}</option>
               ))}
             </select>
-            <Link to={"/createpost"} className="bg-[#5827B7] p-2  text-white  rounded flex justify-center gap-1 items-center">
+            <Link to={"/createpost"} className="bg-[#5827B7] p-2  text-white text-sm sm:text-base md:text-lg lg:text-xl rounded flex justify-center gap-1 items-center hover:opacity-85">
               <Add style={{color:"#eee"}} />
               <h4  >Create a Blog</h4>
             </Link>
