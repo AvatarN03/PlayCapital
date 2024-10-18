@@ -86,11 +86,11 @@ export const navItems = [
     {
       name: "Manasvi Shirshat",
       image:"/assets/naidu.jpg",
-      desc: "Hi, I am a good Girl",
+      desc: " A data analytics expert, specializing in extracting insights from data to guide project decisions. Her analytical mindset adds precision to the project’s strategy.",
       social: {
         linked: "kfdkfjkdlfjkdjfjfkljdf",
         insta: "kfdkfjkdlfjkdjfjfkljdf",
-        twitter: "kfdkfjkdlfjkdjfjfkljdf",
+        github: "kfdkfjkdlfjkdjfjfkljdf",
   
   
       }
@@ -98,11 +98,11 @@ export const navItems = [
     {
       name: "Chirag Dulera",
       image:"/assets/naidu.jpg",
-      desc: "lorembfjfjhfffkjkfj",
+      desc: "A tech enthusiast with strong problem-solving skills, specializing in backend development. He ensures that the project’s infrastructure is robust and scalable.",
       social: {
         linked: "kfdkfjkdlfjkdjfjfkljdf",
         insta: "kfdkfjkdlfjkdjfjfkljdf",
-        twitter: "kfdkfjkdlfjkdjfjfkljdf",
+        github: "kfdkfjkdlfjkdjfjfkljdf",
   
   
       }
@@ -110,11 +110,11 @@ export const navItems = [
     {
       name: "Prashanth Naidu",
       image:"/assets/naidu.jpg",
-      desc: "lorembfjfjhfffkjkfj",
+      desc: "A creative thinker with a passion for front-end design, focused on delivering a seamless user experience. He excels in turning concepts into visually appealing interfaces.",
       social: {
-        linked: "kfdkfjkdlfjkdjfjfkljdf",
-        insta: "kfdkfjkdlfjkdjfjfkljdf",
-        twitter: "kfdkfjkdlfjkdjfjfkljdf",
+        linked: "https://www.linkedin.com/in/prashanth-naidu-8049b8227/",
+        insta: "https://www.instagram.com/js.prashanth?utm_source=qr&igsh=MWJ6bmM3NHNjdHZlaw==",
+        github: "https://github.com/AvatarN03",
   
   
       }
@@ -122,11 +122,11 @@ export const navItems = [
     {
       name: "Praniti Kubal",
       image:"/assets/naidu.jpg",
-      desc: "lorembfjfjhfffkjkfj",
+      desc: "A detail-oriented project manager, ensuring smooth workflow and effective communication among the team. She is adept at organizing tasks and meeting deadlines.",
       social: {
         linked: "kfdkfjkdlfjkdjfjfkljdf",
         insta: "kfdkfjkdlfjkdjfjfkljdf",
-        twitter: "kfdkfjkdlfjkdjfjfkljdf",
+        github: "kfdkfjkdlfjkdjfjfkljdf",
   
   
       }

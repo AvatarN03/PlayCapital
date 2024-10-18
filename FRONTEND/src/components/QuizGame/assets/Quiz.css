@@ -1,8 +1,8 @@
 .container {
-    width: 640px;
+    max-width: 90vw;
     margin: auto;
-    margin-top: 150px;
-    margin-bottom: 150px;
+    height: auto;
+    
     background: white;
     color: #262626;
     display: flex;

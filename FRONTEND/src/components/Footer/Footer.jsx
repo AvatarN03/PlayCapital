@@ -43,16 +43,16 @@ export function Footer() {
     <p className=" text-base sm:text-lg font-semibold text-slate-100">Quick Links</p>
     <ul className="flex flex-col space-y-4 text-slate-300  py-3 px-1 sm:px-6 ">
       <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
-        <Link to={"/"}>Home</Link>
+        <Link onClick={screenTop} to={"/"}>Home</Link>
       </li>
       <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
-        <Link to={"/about"}>About</Link>
+        <Link onClick={screenTop} to={"/about"}>About</Link>
       </li>
       <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
-        <Link to={"/#services"}>Blog</Link>
+        <Link onClick={screenTop} to={"/#services"}>Blog</Link>
       </li>
       <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
-        <Link to={"/#contact"}>Contact</Link>
+        <Link onClick={screenTop} to={"/#contact"}>Contact</Link>
       </li>
       <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
         <Link>FAQ</Link>

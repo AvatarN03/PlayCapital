@@ -52,7 +52,7 @@ const Home = () => {
                 <div className="mx-auto mt-16 w-full sm:mt-20 lg:mt-24 ">
                   <dl className="grid max-w-xl grid-cols-1  mx-auto  gap-10 lg:max-w-none lg:grid-cols-3">
                     {features.map((feature) => (
-                      <div key={feature.name} className="relative min-h-[200px] md:min-h-[500px] flex justify-evenly flex-col items-center p-6 feature rounded-xl border-2 border-slate-300 cursor-crosshair">
+                      <div key={feature.name} className="relative min-h-[200px]  flex justify-evenly flex-col items-center p-6 feature rounded-xl border-2 border-slate-300 cursor-crosshair">
                         <dt className="font-semibold leading-7  text-white text-3xl">
                           
                           {feature.name}
