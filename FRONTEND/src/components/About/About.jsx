@@ -17,10 +17,10 @@ function About() {
         <p className='text-neutral-300 text-base my-5 sm:text-xl font-extralight tracking-wide max-w-5xl mx-auto text-center'>Our diverse team consists of four dedicated individuals: two boys and two girls, each bringing their unique strengths and perspectives. Together, we collaborate to combine creativity, technical expertise, and problem-solving skills to drive innovation and success in our projects.</p>
 
 {/* w-48 sm:w-80 h-48 sm:h-80  */}
-        <div className="flex flex-col sm:p-6 sm:flex-row gap-4 flex-wrap items-center justify-start min-h-screen z-[-10] relative">
+        <div className="flex flex-col mb-8 sm:p-6 sm:flex-row gap-4 flex-wrap items-center justify-start min-h-screen z-[-10] relative">
           {
             memberNames.map(member => (
-              <div className="relative m-4 group translate-y-0 lg:even:-translate-y-1/3 lg:odd:translate-y-1/3">
+              <div className="relative m-4 group translate-y-0 lg:even:-translate-y-1/4 lg:odd:translate-y-1/4">
 
                 <img
                   src={member.image}
@@ -32,19 +32,19 @@ function About() {
                   <h2 className="text-neutral-100 text-2xl font-semibold tracking-wider mb-2">{member.name}</h2>
 
 
-                  <p className="text-white mb-4 px-4 text-base text-justify tracking-wide font-normal">
+                  <p className="text-white mb-2 px-4 text-sm sm:text-base text-justify tracking-wide font-normal">
                     {member.desc}
                   </p>
 
 
-                  <div className="flex space-x-4 gap-4">
-                    <a target='_blank' href={member.social.linked} className="p-4 rounded-full bg-rose-200 text-fourth text-xl">
+                  <div className="flex justify-end sm:justify-center space-x-4 gap-2 sm:gap-4">
+                    <a target='_blank' href={member.social.linked} className="p-3 sm:p-4 rounded-full bg-rose-200 text-fourth text-xl">
                       <LinkedIn />
                     </a>
-                    <a target='_blank' href={member.social.insta} className="p-4 rounded-full bg-rose-200 text-fourth text-xl">
+                    <a target='_blank' href={member.social.insta} className="p-3 sm:p-4 rounded-full bg-rose-200 text-fourth text-xl">
                       <Instagram />
                     </a>
-                    <a target='_blank' href={member.social.github} className="p-4 rounded-full bg-rose-200 text-fourth text-xl">
+                    <a target='_blank' href={member.social.github} className="p-3 sm:p-4 rounded-full bg-rose-200 text-fourth text-xl">
                       <GitHub />
                     </a>
 
@@ -76,6 +76,7 @@ function About() {
                     </a>
                   </div>
                 </div>
+                <hr className='shadow-md sm:hidden' />
               </div>
               
             ))

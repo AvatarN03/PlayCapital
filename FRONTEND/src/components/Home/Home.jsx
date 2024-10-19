@@ -19,7 +19,7 @@ const Home = () => {
       <main className=' scroll-smooth'>
 
         {/* Hero-section-1  */}
-        <section className=' min-h-[60vh] sm:min-h-[85vh] px-6 py-20 sm:p-4 md:p-2 flex justify-center items-start  flex-col relative group w-full ' >
+        <section className=' min-h-[60vh] sm:min-h-[85vh] px-6 py-20 sm:p-4 md:p-2 flex justify-center items-start  flex-col relative group w-full overflow-x-hidden' >
           <div className="absolute w-[40%]  transition-all ease-in-out duration-1000 h-full rounded-full bg-purple-300  sm:-right-1/3 md:-right-36 top-0 blur-sm hidden sm:block"
    ></div>
 
