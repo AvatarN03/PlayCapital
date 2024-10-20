@@ -12,7 +12,7 @@ const DBConnect = async() => {
       console.log("The PlayCapital Backend is Connected to Database Successfully");
       
   } catch (error) {
-    console.log("The PlayCapital Backend is Not Connected to Database.");
+    console.log("The PlayCapital Backend is Not Connected to Database.", error);
     process.exit(1);
     
   }

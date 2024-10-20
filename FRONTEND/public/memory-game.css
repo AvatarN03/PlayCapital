@@ -1,22 +1,36 @@
-html{
+
+
+body, html{
+    width: 122%;
+    height: 100vh;
+    margin: 0 auto;
     background: indigo;
+    
 }
 .quit{
     position: absolute;
     font-size: 20px;
     right: 10%;
-    bottom: 10%;
+    top: 8%;
     background: #7303c0;
-    padding: 30px;
+    padding: 10px;
     color: #ddd;
     border-radius: 10px;
     text-decoration: none;
+}
+.game h1{
+    color: paleturquoise; 
+    text-align: center; 
+    letter-spacing: 3px;
+    margin-bottom: 30px;
 }
 
 .game {
     position: relative;
     display: grid;
     place-content: center;
+    width: 100%;
+    margin: auto;
 }
 .controls {
     display: flex;
@@ -60,7 +74,7 @@ button {
     border: 1px solid #71140b !important;
 }
 .board {
-    padding: 20px;
+    padding: 10px;
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 20px;
@@ -139,4 +153,16 @@ button {
 }
 .highlight {
     color: #7303c0;
+}
+
+@media (max-width: 480px) {
+    .board {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 20px;
+    
+    
+    }
+    
 }

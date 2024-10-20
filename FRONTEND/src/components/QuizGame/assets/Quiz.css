@@ -2,27 +2,20 @@
     max-width: 90vw;
     margin: auto;
     height: auto;
+
     
     background: white;
     color: #262626;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     border-radius: 10px;
     padding: 40px 50px;
 }
 
-.container hr {
-    height: 2px;
-    border: none;
-    background: #707070;
 
-}
 
-.container h2 {
-    font-size: 20px;
-    font-weight: 400;
-}
+
 
 .container ul li {
     display: flex;
@@ -38,22 +31,9 @@
 
 }
 
-.container button {
-    margin: auto;
-    width: 250px;
-    height: 58px;
-    background: #553f9a;
-    color: #fff;
-    font-size: 25px;
-    font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
-}
 
-.container .index {
-    margin: auto;
-    font-size: 18px;
-}
+
+
 
 .container .correct {
     background: #dffff2;

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const Login = ({setLogSig}) => {
   return (
     <div className='bg-[#4e2de4e8] rounded-md w-full flex h-fit p-2 justify-center '>
-        <div className="auth_comp_ui p-6 rounded-md w-full sm:w-[50%] ">
+        <div className="auth_comp_ui p-4 rounded-md w-full sm:w-[50%] ">
             <form action="">
             <Input label="Username" value="" name="username" place="Enter the Username ..."   />
             <Input label="Password" value="" type='password' name="password" place="Enter the Password "    />

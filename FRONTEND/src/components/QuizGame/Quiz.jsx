@@ -86,21 +86,21 @@ const Quiz = () => {
 
   return (
     <div className='container p-2 sm:p-4'>
-      <Link to={"/features"} className="absolute right-4 bottom-4 p-4 bg-neutral-400 rounded-md">Quit</Link >
-      <button className='text-sm sm:text-base font-extralight p-2 sm:p-4'>Level - {level}</button>
+      <Link to={"/features"} className="absolute right-4 top-4  p-2 sm:p-4 bg-neutral-400 rounded-md">Quit</Link >
+      <button className='text-sm sm:text-base font-light bg-slate-300 min-w-[20%] whitespace-nowrap mx-auto  p-1 sm:p-4'>Level - {level}</button>
       <h1 className=' text-xl sm:text-3xl font-medium'>PlayCapital - Quiz App</h1>
       <hr />
       
       {!result ? (
         <>
-          <h2 className='text-base sm:text-inherit text-justify font-light sm:font-normal'>{index + 1}. {question.question}</h2>
+          <h2 className='text-sm leading-5 sm:leading-8 text-justify font-light sm:font-normal'>{index + 1}. {question.question}</h2>
           <ul>
             <li  ref={Option1} onClick={(e) => checkAns(e, 1)}>{question.option1}</li>
             <li ref={Option2} onClick={(e) => checkAns(e, 2)}>{question.option2}</li>
             <li ref={Option3} onClick={(e) => checkAns(e, 3)}>{question.option3}</li>
             <li ref={Option4} onClick={(e) => checkAns(e, 4)}>{question.option4}</li>
           </ul>
-          <button onClick={next}>Next</button>
+          <button className='bg-green-700 text-slate-200 p-2 rounded' onClick={next}>Next</button>
           <div className="index">{index + 1} of {5} questions</div>
         </>
       ) : (
