@@ -8,8 +8,8 @@ const Authenticate = () => {
 
   return (
     <section className='auth_bg grid place-content-center min-h-screen w-[100vw] transition-transform duration-150 ease-in'>
-      <div className="z-20 w-[95%] mx-auto ">
-      <h1 className='font-medium sm:font-bold block sm:hidden tracking-wide w-1/2  bg-slate-400 bg-opacity-50 p-1 rounded-md -mb-4 z-30 relative text-white text-base md:text-3xl '>{
+      <div className="z-20 w-full mx-auto ">
+      <h1 className='font-medium sm:font-bold block sm:hidden tracking-wide w-fit bg-slate-400 bg-opacity-50 p-1 rounded-md -mb-4 ml-4 whitespace-nowrap z-30 relative text-white text-base md:text-3xl '>{
         !logsig? " Register Here": "Welcome Back"}</h1>
 
         {

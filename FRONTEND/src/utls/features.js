@@ -132,4 +132,23 @@ export const navItems = [
       }
     },
   ]
+
+  export const loginInitial = {
+    username: '',
+    password: ''
+  }
+  export const signInitial = {
+    username: '',
+    email: '',
+    password: '',
+    avatar:null
+  }
+
+  export const loginCatch = async ( login, setLogin)=>{
+    console.log("hey");
+    console.log(login);
+   
+    
+    
+  }
   

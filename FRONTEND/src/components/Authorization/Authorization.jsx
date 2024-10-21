@@ -17,7 +17,7 @@ const loginInitial = {
   password: ''
 }
 const signInitial = {
-  username: '',
+  username: '', 
   email: '',
   password: '',
   avatar:null
