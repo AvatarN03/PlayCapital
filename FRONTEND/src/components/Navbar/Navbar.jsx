@@ -1,10 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Menu, Close } from '@mui/icons-material';
 import Logo from '../Logo/Logo';
 import { Link, NavLink } from 'react-router-dom';
 import { userContext } from '../../context/userContext';
 import { Avatar } from '@mui/material';
 import { navItems } from '../../utls/features';
+import {useGSAP} from "@gsap/react"
+import gsap from 'gsap';
 
 
 
@@ -13,17 +15,21 @@ function Navbar() {
   const [menu, setMenu] = useState(false);
   const { auth, setAuth } = useContext(userContext);
   const [profile, setProfile] = useState(false);
+  const navItemsRef = useRef(null);
   const handleMenu = () => {
     setMenu(prev => !prev)
   }
+
+  
+
 
   return (
     <header className='sticky sm:static flex justify-between items-center nav px-3 py-5 lg:h-28 md:h-24 sm:h-20 h-14  z-30'>
       <Logo />
       <div className="flex justify-between items-center ">
 
-        <nav className="hidden sm:block">
-          <ul className='flex sm:gap-4 md:gap-12  justify-between items-center'>
+        <nav className="hidden sm:block" >
+          <ul className='flex sm:gap-4 md:gap-12  justify-between items-center' >
             {navItems.map((nav) => (
               <li key={nav.title} className=' group transform'>
                 <NavLink to={nav.url} className='flex p-2  text-sm justify-center  items-center '>

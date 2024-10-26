@@ -86,7 +86,7 @@ const Quiz = () => {
 
   return (
     <div className='container p-2 sm:p-4'>
-      <Link to={"/features"} className="absolute right-4 top-4  p-2 sm:p-4 bg-neutral-400 rounded-md">Quit</Link >
+      <Link to={"/features"} className="absolute right-4 top-2  p-2 sm:p-4 bg-neutral-400 rounded-md">Quit</Link >
       <button className='text-sm sm:text-base font-light bg-slate-300 min-w-[20%] whitespace-nowrap mx-auto  p-1 sm:p-4'>Level - {level}</button>
       <h1 className=' text-xl sm:text-3xl font-medium'>PlayCapital - Quiz App</h1>
       <hr />

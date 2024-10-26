@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Incomebracket.css';
+
 import './game3connectinglink.css';
 
 const Game3ConnectingLink = () => {
