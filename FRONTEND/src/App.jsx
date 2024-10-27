@@ -15,6 +15,7 @@ import Game3ConnectingLink from './components/RuleTheBoard/Game3ConnectingLink';
 import Quiz from './components/QuizGame/Quiz';
 import { CircularProgress } from '@mui/material';
 import Authenticate from './components/Authenticate/Authenticate';
+import Loader from './components/Loader/Loader';
 
 
 // Lazy load components
@@ -41,7 +42,7 @@ const NotFound = () => {
 };
 
 const RedirectToHTML = ({ file }) => {
-  window.open(`/${file}`, '_blank');  // Redirect to the HTML file
+  window.open(`/${file}`, '_self');  // Redirect to the HTML file
   return null; // Return nothing since it's a redirect
 };
 
@@ -66,15 +67,7 @@ const MainApp = () => {
   return (
     <>
 
-      <Suspense fallback={
-          <div className='text-7xl min-h-screen flex flex-col justify-center items-center'>
-            <p>Loading ...</p>
-            <div className="flex justify-center items-center gap-4">
-              <CircularProgress size="3rem" color="secondary" />
-              <CircularProgress color="success" />
-              <CircularProgress size="3rem" color="inherit" />
-            </div>
-          </div>}>
+      <Suspense fallback={<Loader/>}>
         {/* The Routes are defined  */}
         <Routes>
           {/* The Routes with Header and Footer  */}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { Link} from 'react-router-dom';
 import './game3connectinglink.css';
 
 const Game3ConnectingLink = () => {
@@ -99,17 +99,18 @@ const Game3ConnectingLink = () => {
   const { income, expense, payday, assets, liabilities, incBrac, urlIden } = financialData;
 
   return (
-    <div className="wrapperconn">
+    <div className="grid place-content-center h-screen ">
+      <h1 className='text-white text-center font-semibold tracking-widest sm:block text-base  mb-4'>Rule Board</h1>
       <div className="containerconn">
-        <h3><b>{incBrac}</b></h3>
-        <p className="para" style={{ marginBottom: '5px' }}>
+        <h3 className='text-base sm:text-xl md:text-2xl text-neutral-300'><b>{incBrac}</b></h3>
+        <p className="text-sm sm:text-base md:text-xl text-neutral-400 text-center sm:text-left h-auto" >
           <br />
           You have the following financial components with you: <br />
           <b>Income:</b>&nbsp;&nbsp; Rs. {income}<br />
           <b>Expenses:</b>&nbsp;&nbsp; Rs. {expense}<br />
           <b>PayDay:</b>&nbsp;&nbsp; Rs. {payday}<br />
-          <br />
-          <div className="display_ass_liabs">
+ 
+          <div className="flex justify-between items-center gap-2 my-4 text-left">
             <div className="disp_ass">
               <b>Assets</b>
               <br />
@@ -117,7 +118,7 @@ const Game3ConnectingLink = () => {
               Vehicles:&nbsp;&nbsp; Rs. {assets.vehicles}<br />
               Other:&nbsp;&nbsp; Rs. {assets.other}
             </div>
-            <div className="disp_liabs">
+            <div className="border-l-2 pl-2">
               <b>Liabilities</b>
               <br />
               Mortgage:&nbsp;&nbsp; Rs. {liabilities.mortgage}<br />
@@ -126,12 +127,10 @@ const Game3ConnectingLink = () => {
             </div>
           </div>
         </p>
-        <div className="buttons">
-          <a href='/features/ruleboard'>
-            <input type="button" id="back_btn" value="Back" />
-          </a>
+        <div className="flex justify-between items-center gap-3 w-full">
+          <Link to='/features/ruleboard' className="bg-green-500 hover:bg-green-400 p-2 rounded text-slate-800">Back</Link>
           <button
-            id="start_btn"
+            className="bg-purple-300 hover:bg-green-100 p-2 rounded text-slate-800" 
             onClick={() => {
               if (urlIden === "high") {
                 window.location.href = './public/gamehigh.html';

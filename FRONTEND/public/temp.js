@@ -333,3 +333,15 @@ function callNext(i) {
   // Show the next element
   document.getElementById(`goti${i + 1}`).style.display = "block";
 }
+
+const menu1 = document.getElementById("menu1");
+const menu2 = document.getElementById("menu2");
+const statement = document.querySelector(".inc_statement");
+
+function toggleStatement() {
+  statement.classList.toggle("active");
+}
+
+menu1.addEventListener("click", toggleStatement);
+menu2.addEventListener("click", toggleStatement);
+

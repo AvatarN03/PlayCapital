@@ -5,7 +5,7 @@ function IncomeBracket() {
   return (
 
     <div className="w-full min-h-screen grid place-items-center text-white text-sm">
-      <Link to={"/"} className=' absolute left-0 top-[90%] sm:top-16 p-1 sm:p-2 rounded-full text-base bg-neutral-400 aspect-square flex justify-center items-center text-black'>Home</Link>
+      <Link to={"/features"} className=' absolute left-0 top-[90%] sm:top-16 p-1 sm:p-2 rounded-full text-base bg-neutral-400 aspect-square flex justify-center items-center text-black'>Home</Link>
   <h1 className="text-xl sm:text-3xl md:text-5xl font-semibold tracking-wide sm:tracking-wider text-[#94cfd8]">Welcome to Rule Board</h1>
   <h3 className="text-base sm:text-2xl text-slate-200 font-semibold">Description of the Game:</h3>
   <div className="mx-auto w-[90%] bg-[#94cfd8] text-neutral-800 rounded-md p-4 space-y-4">
