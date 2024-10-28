@@ -202,6 +202,9 @@ button {
         width: 100px;
         height: 100px;
     }
+    .card-back {
+        font-size: 16px;
+    }
 
     .stats {
         font-size: 1.5rem;
@@ -240,6 +243,10 @@ button {
     .card {
         width: 80px;
         height: 80px;
+    }
+
+    .card-back {
+        font-size: 12px;
     }
 
     .stats {
@@ -284,6 +291,9 @@ button {
     .card {
         width: 70px;
         height: 70px;
+    }
+    .card-back {
+        font-size: 10px;
     }
 
     .stats {
@@ -332,6 +342,9 @@ button {
     .card {
         width: 60px;
         height: 60px;
+    }
+    .card-back {
+        font-size: 8px;
     }
 
     .stats {

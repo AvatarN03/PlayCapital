@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Google } from "@mui/icons-material"
 import Input from './Input'
 import Button from './Button'
-import { Link } from 'react-router-dom'
-import { loginCatch, loginInitial } from '../../utls/features'
+import { Link, useNavigate } from 'react-router-dom'
+import {  loginInitial } from '../../utls/features'
+import { userContext } from '../../context/userContext'
+import axios from 'axios'
 
-const Login = ({ setLogSig }) => {
+const Login = ({ setLogSig, setMessage, setError }) => {
   const [login, setLogin] = useState(loginInitial);
+  const data = useContext(userContext)
+  const navigate = useNavigate();
 
 
 
@@ -16,21 +20,56 @@ const Login = ({ setLogSig }) => {
     setLogin(prev => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  const handleSubmit = (e) => {
+  const loginCatch = async (e)=>{
     e.preventDefault();
-    loginCatch(login, setLogin);
-  };
+    console.log("hey");
+    console.log(login);
+    
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_API_URI}/api/login`, login);
+    if (response.data.isSuccess) {
+      setError("");
+      setMessage('Login successful!');
+      
+      console.log(response.data);
+      console.log(response.data.user);
+      data.setAuth(response.data)
+      localStorage.setItem('Playtoken', response.data.token);
+      
+      
+      setTimeout(() => {
+        navigate("/")
+      }, 2000);
+
+    }
+    else {
+      setError(response.data.error)
+      setTimeout(()=>{
+        setLogin(loginInitial)
+        setError("")
+
+      },1000)
+    }
+    } catch (error) {
+      
+      console.log(error);
+      
+    }
+   
+    
+    
+  }
 
 
 
-
+ 
 
 
 
   return (
     <div className='bg-[#4e2de4e8] rounded-md w-full flex h-fit p-2 justify-center '>
       <div className="auth_comp_ui p-4 rounded-md w-full sm:w-[50%] ">
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" onSubmit={loginCatch}>
           <Input label="Username" value={login.username} name="username" place="Enter the Username ..." onChange={loginChange} />
           <Input label="Password" value={login.password} type='password' name="password" place="Enter the Password " onChange={loginChange} />
           <Button name="Login" />

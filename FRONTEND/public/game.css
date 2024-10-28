@@ -27,6 +27,11 @@ img {
   grid-template-columns: 1fr 2fr 2fr 1fr;
   grid-template-rows: 1fr 2fr 2fr 1fr;
 }
+.quit{
+  background: purple;
+  color: #c6b3cb;
+  padding: .5rem ;
+}
 
 .box {
   text-align: center;
@@ -119,8 +124,7 @@ h1 {
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   background-color: #d8b4fe;
   border: 0.1px solid #040f16;
-  border-radius: 20px;
-  padding: 0.2rem;
+  border-radius: 10px;
   text-wrap: wrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -180,7 +184,6 @@ h1 {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-color: #ad522e;
   padding: 5px 40px;
   width: 40vw;
   height: 40vh;
@@ -233,8 +236,9 @@ h1 {
   position: absolute;
   display: none;
   border-radius: 1rem;
-  left: 34%;
-  top:45%;
+  left: 20%;
+  top:5%;
+  text-align: center;
   padding: 1rem;
   
 }
@@ -264,20 +268,6 @@ hr{
   background: purple;
 }
 
-@media screen and (max-width: 690px) {
-  #sit6 {
-    grid-row-start: 2;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem;
-    /* background: #d8b4fe; */
-}
-  
-}
 
 
 
@@ -285,7 +275,7 @@ hr{
   .game{
     width: 100%;
   }
-
+  
   .inc_statement {
     position: absolute;
     right: -50%;
@@ -298,12 +288,19 @@ hr{
     place-content: center;
     
   }
-
+  .congo-modal {
+    
+    left: 30%;
+    
+    
+    
+  }
+  
   .inc_statement h1{
     font-size: 2rem;
     margin: 1rem 0;
   }
-
+  
   #menu1{
     display: flex;
   }
@@ -315,4 +312,61 @@ hr{
     width:70%;
   }
   
+}
+
+@media screen and (max-width: 690px) {
+  #sit6 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    /* background: #d8b4fe; */
+}
+
+.ins_block,
+.asset_block,
+.liab_block {
+  font-size: .9rem !important;
+}
+.congo-modal {
+  left: 20%;
+
+  
+}
+#sit11, #sit12, #sit13, #sit10 {
+  display: none;
+}
+  
+}
+@media screen and (max-width: 480px) {
+  .inc_statement {
+    right: -70%;
+  }
+
+  .inc_statement h1{
+    font-size: 1.1rem;
+  }
+
+  .congo-modal {
+    top: 30%;
+
+    
+  }
+
+  .active{
+    right: 0;
+    width:90%;
+  }
+  h1{
+    font-size: 1.1rem;
+  }
+  
+  .create-modal-content{
+    width: fit-content;
+    
+  }
 }

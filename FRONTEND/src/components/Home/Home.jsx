@@ -16,16 +16,16 @@ const Home = () => {
   return (
     
 
-      <main className=' scroll-smooth'>
+      <main className=' scroll-smooth z-[10]'>
 
         {/* Hero-section-1  */}
         <section className=' min-h-[60vh] sm:min-h-[85vh] px-6 py-20 sm:p-4 md:p-2 flex justify-center items-start  flex-col relative group w-full overflow-x-hidden' >
-          <div className="absolute w-[40%]  transition-all ease-in-out duration-1000 h-full rounded-full bg-purple-300  sm:-right-1/3 md:-right-36 top-0 blur-sm hidden sm:block"
+          <div className="absolute w-[40%]  z-[10] transition-all ease-in-out duration-1000 h-full rounded-full bg-purple-300  sm:-right-1/3 md:-right-36 top-0 blur-sm hidden sm:block"
    ></div>
 
           <div className="max-w-7xl flex flex-col gap-7 items-start justify-between h-full sm:m-8">
 
-            <h1 className='md:text-7xl text-5xl tracking-wide  bg-gradient-to-l  bg-clip-text text-transparent from-[#123575] to-[#AFEFEC] sm:tracking-widest mb-6 font-semibold z-10 '>Master Your Capital <span className='text-slate-300/50'>Base </span></h1>
+            <h1 className='md:text-7xl text-5xl tracking-wide  bg-gradient-to-l  bg-clip-text text-transparent from-[#123575] to-[#AFEFEC] sm:tracking-widest mb-6 font-semibold z-[20] '>Master Your Capital <span className='text-slate-300/50'>Base </span></h1>
             <p className='w-30 sm:w-2/3 md:w-1/2 font-light  text-left text-slate-200  text-2xl sm:text-base md:text-lg lg:text-xl sm:tracking-wider  sm:leading-10' >
               Embark on a financial journey with interactive quizzes and engaging flashcards. Master the rules of finance while enjoying a fun and competitive game experience!
             </p>

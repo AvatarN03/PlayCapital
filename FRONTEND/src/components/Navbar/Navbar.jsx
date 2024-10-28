@@ -24,7 +24,7 @@ function Navbar() {
 
 
   return (
-    <header className='sticky sm:static flex justify-between items-center nav px-3 py-5 lg:h-28 md:h-24 sm:h-20 h-14  z-30'>
+    <header className='relative flex justify-between items-center nav px-3 py-5 lg:h-28 md:h-24 sm:h-20 h-14  z-[500]'>
       <Logo />
       <div className="flex justify-between items-center ">
 
@@ -44,22 +44,24 @@ function Navbar() {
       </div>
 
       <div className='flex justify-center items-center'>
-        <Link to={'/about'} className='text-xs sm:text-base mx-2 block bg-neutral-100 px-2 py-[5px] sm:px-3 md:px-5 rounded-lg'>
+        <Link to={'/about'} className='text-xs sm:text-base mx-2 block bg-neutral-100 px-1 py-[5px] sm:px-3 md:px-5 rounded-lg'>
           About
         </Link> 
 
         {Object.keys(auth).length ? (
-          <div className='mx-8 border-white border-2 rounded-full relative cursor-pointer drop-shadow-lg ' onClick={() => setProfile(prev => !prev)}>
+          <div className='mx-1 sm:mx-3 md:mx-5 lg:mx-8 border-white border-2 rounded-full relative cursor-pointer drop-shadow-lg  ' onClick={() => setProfile(prev => !prev)}>
             <Avatar alt="User Avatar" src={auth ? auth.user.avatar : "https:400x600.in"} />
 
-            <div className={` ${profile ? "opacity-100 block" : "opacity-0 hidden"} absolute top-10 right-0 w-[200px] bg-slate-400 p-5 rounded-md shadow-xl transition-all duration-150 ease-in-out`}>
+            <div className={` ${profile ? "opacity-100 block" : "opacity-0 hidden"} absolute top-14 right-2 w-[200px] bg-gray-700 text-white  p-5 rounded-md shadow-xl transition-all duration-150 ease-in-out`}>
               <div className="flex gap-4 flex-col">
-                <img src={auth ? auth.user.avatar : "https:400x600.in"} alt="" className="w-10 h-10 rounded-full" />
-                <p>{auth ? auth.user.username : 'User'}</p>
-                <p>{auth ? auth.user.email : 'User'}</p>
+                <img src={auth ? auth.user.avatar : "https://imgs.search.brave.com/GIL_dabaOq4GAxTVyW2oN5sl6gbK1dpS4fspnJz7FJY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9hdmF0YXItcmVz/b3VyY2luZy1jb21w/YW55XzEyNTQ5Njct/NjY1My5qcGc_c2Vt/dD1haXNfaHlicmlk"} alt="" className="w-10 h-10 rounded-full" />
+                <p>{auth ? auth.user.username : 'User Name'}</p>
+                <hr />
+                <p>{auth ? auth.user.email : 'User Email'}</p>
+                <hr />
                 {/* <p>{auth? auth.score : 'Score: 950'}</p> */}
-                <p>Score: 950</p>
-                <Link to="/logout" className="text-rose-900 text-sm bg-rose-100 p-1 px-3 cursor-pointer">Logout</Link>
+                <p>{ auth.user.score || 'Score: 0'}</p>
+                <Link to="/logout" className="bg-gray-600 text-sm text-neutral-100  p-3 rounded-lg cursor-pointer">Logout</Link>
               </div>
             </div>
 
@@ -91,7 +93,7 @@ function Navbar() {
 
         {/* Menu */}
         <div
-          className={`absolute top-full left-0 w-full  sm:hidden  backdrop-blur-3xl text-rose-300 bg-[#BF4C8B] bg-opacity-70 transition-all duration-300 ease-in z-[200px] 
+          className={`absolute top-full left-0 w-full  sm:hidden  backdrop-blur-3xl text-rose-300 bg-[#BF4C8B]  transition-all duration-300 ease-in z-[200px] 
       ${menu ? 'h-fit opacity-100 overflow-auto' : 'h-0 overflow-hidden opacity-0'}
     `}
         >

@@ -46,13 +46,13 @@ export function Footer() {
         <Link onClick={screenTop} to={"/"}>Home</Link>
       </li>
       <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
+        <Link onClick={screenTop} to={"/features"}>Features</Link>
+      </li>
+      <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
+        <Link onClick={screenTop} to={"/blog"}>Blog</Link>
+      </li>
+      <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
         <Link onClick={screenTop} to={"/about"}>About</Link>
-      </li>
-      <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
-        <Link onClick={screenTop} to={"/#services"}>Blog</Link>
-      </li>
-      <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
-        <Link onClick={screenTop} to={"/#contact"}>Contact</Link>
       </li>
       <li className='font-bold text-base sm:text-lg  rounded-sm border-2 px-2 hover:bg-slate-500 border-slate-500'>
         <Link>FAQ</Link>

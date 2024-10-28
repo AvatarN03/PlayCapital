@@ -3,9 +3,10 @@ import Input from './Input'
 import Button from './Button'
 import { Google, Person } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
-import { signInitial } from '../../utls/features'
+import { signInitial, signupCatch } from '../../utls/features'
+import axios from 'axios'
 
-const Signup = ({setLogSig}) => {
+const Signup = ({setLogSig, setMessage, setError}) => {
   const [signup, setSignUp] = useState(signInitial);
 
 
@@ -23,9 +24,12 @@ const Signup = ({setLogSig}) => {
     }))
   }
 
-  const signupCatch = ()=>{
+  const handleSubmit = async(e) => {
+    e.preventDefault();
 
-  }
+    signupCatch(signup, setSignUp,setLogSig, setMessage, setError);
+  };
+  
 
 
 
@@ -35,7 +39,7 @@ const Signup = ({setLogSig}) => {
     <div className='bg-[#4e2de4e8] rounded-md min-w-[90%] flex h-fit p-2 justify-center '>
         <div className="auth_comp_ui p-6 rounded-md w-full sm:w-[50%] ">
           
-            <form action="" onSubmit={signupCatch}>
+            <form action="" onSubmit={handleSubmit}>
               <div className="flex justify-center items-center gap-4">
                 <h3 className='text-slate-200 tracking-wide font-light '>Upload your Avatar</h3>
                 <label htmlFor="avatar" className='bg-[#9575D6] cursor-pointer rounded-xl p-4 px-8 flex justify-center items-center'>
@@ -43,9 +47,9 @@ const Signup = ({setLogSig}) => {
                   <input type="file" name='avatar' id='avatar' className='hidden' onChange={handleFile}/>
                 </label>
               </div>
-            <Input label="Username" value={signup.username} name="username" place="Enter the Username ..."  onChange={signUpChange} />
-            <Input label="Email" value={signup.email} type='email' name="email" place="Enter the Email.. " onChange={signUpChange}   />
-            <Input label="Password" value={signup.password} type='password' name="password" place="Enter the Password "  onChange={signUpChange}  />
+            <Input key={1} label="Username" value={signup.username} name="username" place="Enter the Username ..."  onChange={signUpChange} />
+            <Input key={2} label="Email" value={signup.email} type='email' name="email" place="Enter the Email.. " onChange={signUpChange}   />
+            <Input key={3} label="Password" value={signup.password} type='password' name="password" place="Enter the Password "  onChange={signUpChange}  />
            <Button name="Signup" />
             </form>
             <p className='text-center text-slate-300 font-lights'>OR</p>

@@ -21,12 +21,12 @@ const userSchema = new mongoose.Schema({
         type: String,        
     },
     //to get the posts of the users
-    post:[
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Post'
-        }
-    ]
+    // post:[
+    //     {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: 'Post'
+    //     }
+    // ]
 }, { timestamps: true })
 
 

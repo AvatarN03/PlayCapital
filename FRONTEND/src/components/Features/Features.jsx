@@ -22,7 +22,7 @@ const Features = () => {
                 <img src="/assets/quiz.png" alt="" />
               </div>
               <h3 className="mt-8 text-2xl font-semibold text-white">Quiz Game</h3>
-              <p className="mt-4 text-xl font-thin text-left text-slate-100">
+              <p className="mt-4 text-base sm:text-xl font-thin text-left text-slate-100">
               Test your financial knowledge with the PlayCapital. Play through engaging questions to sharpen your money skills and boost financial literacy!
               </p>
             </div>

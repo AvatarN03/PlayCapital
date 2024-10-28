@@ -107,13 +107,14 @@ const Quiz = () => {
       ) : (
         <>
           <h2>You Scored {score} out of {5}</h2>
-          <button onClick={reset}>Reset</button>
-          {level === 1 && score >= 3 && <button onClick={nextLevel}>Go To Medium Level</button>}
-          {level === 2 && score >= 4 && <button onClick={nextLevel}>Go To Hard Level</button>}
+          {level === 3 ? <Link to={"/features"} className="p-2 rounded text-center bg-green-500 text-black">Home</Link> :
+          <button className='p-2 rounded bg-green-500 text-black' onClick={reset}>Reset</button>}
+          {level === 1 && score >= 3 && <button className='p-2 rounded bg-slate-500 text-black' onClick={nextLevel}>Go To Medium Level</button>}
+          {level === 2 && score >= 4 && <button onClick={nextLevel} className='p-2 rounded bg-slate-500 text-black'>Go To Hard Level</button>}
           {level === 3 && (
             <>
-              <h2>Thank You!</h2>
-              <h2 className="final-score">Your Final Score is {totalScore} out of 15</h2>
+              <h2 className='font-semibold text-base'>Thank You!</h2>
+              <h2 className=" text-base sm:text-xl final-score">Your Final Score is {totalScore} out of 15</h2>
             </>
           )}
         </>

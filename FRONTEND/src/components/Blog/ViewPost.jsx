@@ -1,8 +1,9 @@
 import { Button, Fab } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {  Delete, Edit } from '@mui/icons-material';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
+import { userContext } from '../../context/userContext';
 
 
 const ViewPost = () => {
@@ -10,6 +11,8 @@ const ViewPost = () => {
 
     const {id} = useParams();
     const [post, setPost] = useState({});
+    const [isEditable, setIsEditable] = useState(false);
+    const data = useContext(userContext);
     
     useEffect(()=>{
         const fetchPost = async()=>{
@@ -23,13 +26,18 @@ const ViewPost = () => {
             }
             else{
                 setPost(response.data.post);
-                console.log(post);
+                if(response.data.post.user == data.auth.user._id ){
+                    setIsEditable(true);
+                }else{
+                    setIsEditable(false);
+                }
                 
             }
             
         }
         fetchPost();
-    })
+    },[])
+
   
 
     
@@ -52,25 +60,28 @@ const ViewPost = () => {
                 
 
                 <div className="flex w-full justify-end items-center gap-2">
-                    <Button name="topic" style={{backgroundColor:"pink", color:"black"}} id="topic" className='bg-slate-200 p-3 text-black'>{post.category}</Button>
-                        
+                    <Button name="topic" style={{backgroundColor:"pink", color:"black"}} id="topic" className='bg-slate-200 p-3 '>{post.category}</Button>
+                    { isEditable? (     
+                        <>
+                    <Link to={`/editpost/${id}`}>   
                     <Fab color="secondary" aria-label="edit">
                         <Edit />
                     </Fab>
-                    <Fab color="warning" aria-label="delete">
-                        <Delete />
-                    </Fab>
+                    </Link>
+                        </>)           
+                    : null }
                 </div>
             </div>
             <div className="h-full w-full px-4 my-16">
                 <div >
                    
-                    <h2 className='text-3xl capitalize p-4 border-slate-300 outline-none my-7 border-b-2 w-full flex flex-wrap'>{post.title}</h2>
+                    <h2 className='text-3xl capitalize p-4 border-slate-300 text-neutral-200 outline-none my-7 border-b-2 w-full flex flex-wrap'>{post.title}</h2>
                     <p className='w-full min-h-5 bg-rose-50 rounded-md resize-none text-xl mb-16 p-3 border-slate-200 outline-none'>{post.desc}</p>
                     
                     <div className="flex justify-end items-center">
+                    <Link to={"/blog"} className='py-1 px-3 bg-indigo-500 hover:bg-indigo-400 text-white rounded-s-sm'>Return</Link>
+
                        
-                        <Button variant="outlined"><Link to={"/blog"}>Return</Link></Button>
                     </div>
                 </div>
             </div>

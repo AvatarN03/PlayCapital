@@ -6,7 +6,7 @@ export default function BlogSkele() {
   return (
     <Box
       sx={{
-        bgcolor: '#121212',
+        bgcolor: 'transparent',
         p: 8,
         width: '100%',
         display: 'flex',
@@ -16,8 +16,8 @@ export default function BlogSkele() {
       <Skeleton
         sx={{ bgcolor: 'grey.900' }}
         variant="rectangular"
-        width={210}
-        height={118}
+        width={900}
+        height={300}
       />
     </Box>
   );

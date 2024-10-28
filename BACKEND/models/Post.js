@@ -4,7 +4,6 @@ const postSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        unique: true
     },
     desc: {
         type: String,
@@ -19,7 +18,12 @@ const postSchema = new mongoose.Schema({
     coverImage: {
         type: String,
         default:"https://cloud.mongodb.com/v2#/org/66c0863aaea46b2947b8cfa1/"
-    }
+    },
+    user:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    
 }, { timestamps: true });
 
 // Pre-save hook

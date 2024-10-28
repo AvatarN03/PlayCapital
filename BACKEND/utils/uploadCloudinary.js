@@ -20,7 +20,8 @@ require('dotenv').config();
           });
     
           console.log(response.url);
-    
+          console.log(response.url);
+          
           return response.url
         } catch (error) {
     

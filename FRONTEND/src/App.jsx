@@ -1,21 +1,19 @@
 import { lazy, Suspense, useContext } from 'react';
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import UserContextProvider, { userContext } from './context/userContext';
-
-import Authorization from './components/Authorization/Authorization';
 import Navbar from './components/Navbar/Navbar';
 import Features from './components/Features/Features';
 import { Footer } from './components/Footer/Footer';
 import About from './components/About/About';
 import ViewPost from './components/Blog/ViewPost';
 import Logout from './components/LogOut/Logout';
-import MemoryGame from './components/MemoryGame/MemoryGame';
 import IncomeBracket from './components/RuleTheBoard/IncomeBracket';
 import Game3ConnectingLink from './components/RuleTheBoard/Game3ConnectingLink';
 import Quiz from './components/QuizGame/Quiz';
-import { CircularProgress } from '@mui/material';
 import Authenticate from './components/Authenticate/Authenticate';
 import Loader from './components/Loader/Loader';
+import EditBlog from './components/Blog/EditBlog';
+import BlogSkele from './utls/BlogSkele';
 
 
 // Lazy load components
@@ -38,12 +36,12 @@ const NoNavFooterLayout = () => {
 };
 
 const NotFound = () => {
-  return <h1 className='text-center text-3xl ' >404 - Page Not Found</h1>;
+  return <h1 className='text-center text-sm sm:text-base md:text-xl ld:text-2xl min-h-screen flex justify-center items-center ' >404 - Page Not Found</h1>;
 };
 
 const RedirectToHTML = ({ file }) => {
-  window.open(`/${file}`, '_self');  // Redirect to the HTML file
-  return null; // Return nothing since it's a redirect
+  window.open(`/${file}`, '_self');  
+  return null; 
 };
 
 function App() {
@@ -76,6 +74,7 @@ const MainApp = () => {
             <Route path="/about" element={<About />} />
             <Route path="/features" element={<Features />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/b" element={<BlogSkele />} />
 
             {/* The routes inside of the header & footer and secure  */}
 
@@ -89,6 +88,7 @@ const MainApp = () => {
           {/* The Routes without Header and Footer  */}
           <Route element={<PrivateRoute />}>
             <Route path="/createpost" element={<CreateBlog />} />
+            <Route path="/editpost/:id" element={<EditBlog />} />
           </Route>
 
           <Route path="/logout" element={<Logout />} />

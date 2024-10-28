@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 
 export const userContext = createContext();
@@ -20,18 +20,10 @@ export default function userContextProvider({children}){
                   Authorization: `Bearer ${token}`,
                 },
               });
-    
-              console.log("dada", response);
               const data = await response.json();
-              console.log("hi0");
-              console.log(data);
-              
-              
-              console.log("hi1");
               if (data.user) {
                 setAuth(data);
-              }
-              console.log("hi2");
+              }              
               
             } catch (error) {
               console.error('Failed to fetch user', error);
@@ -46,3 +38,4 @@ export default function userContextProvider({children}){
         {children}
     </userContext.Provider>
 }
+

@@ -1,14 +1,9 @@
 import { Link } from "react-router-dom";
-import { Add } from '@mui/icons-material';
+import { Add, AddOutlined } from '@mui/icons-material';
 import { useEffect, useState } from "react";
 import axios from 'axios';  // Don't forget to import axios
+import { options } from '../../utls/features';
 
-const options = [
-  { id: 1, topic: "stockMarket" },
-  { id: 2, topic: "CryptoCurrency" },
-  { id: 3, topic: "Option Trading" },
-  { id: 4, topic: "DropShipping" }
-];
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -19,19 +14,15 @@ const Blog = () => {
       try {
 
         let url = `${import.meta.env.VITE_API_URI}/create/post`;
-        console.log("hi1");
-        
+
         if (category !== 'All') {
-          console.log("hi2");
           url += `?category=${category}`;
         }
-        console.log("hi3");
         const response = await axios.get(url);
 
         console.log(response);
-        console.log("hi4");
         if (response.data.isSuccess) {  // Check for successful response
-          console.log("hi5");
+          console.log(response.data.posts);
           setPosts(response.data.posts); // Ensure posts is being set correctly
         }
       } catch (error) {
@@ -45,12 +36,12 @@ const Blog = () => {
   const changePost = (e) => {
     const selectedCategory = e.target.value;
     setCategory(selectedCategory);
- 
+
   };
 
 
   return (
-    <div className="bg-white bg-opacity-20 backdrop-blur-md py-4 sm:py-32 min-h-screen">
+    <div className="bg-white bg-opacity-20  md py-4 sm:py-32 min-h-screen relative">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto w-full rounded-xl lg:mx-0 bg-rose-200/80 p-5">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Capital Blog</h2>
@@ -67,26 +58,40 @@ const Blog = () => {
               ))}
             </select>
             <Link to={"/createpost"} className="bg-[#5827B7] p-2  text-white text-sm sm:text-base md:text-lg lg:text-xl rounded flex justify-center gap-1 items-center hover:opacity-85">
-              <Add style={{color:"#eee"}} />
+              <AddOutlined />
               <h4  >Create a Blog</h4>
             </Link>
           </div>
           {posts.length > 0 ? (
             posts.map((post) => (
-              <Link to={`/post/${post._id}`} key={post._id} className="flex h-[300px] sm:h-72 flex-col-reverse sm:flex-row items-start justify-between bg-fourth/90 py-4 px-8 rounded-md relative cursor-pointer">
-                <div className="w-full sm:w-[30%] my-4">
-
-                  <div className="flex justify-between items-center">
-                    <h1 className="text-3xl text-primary">{post.title}</h1>
-                    <button className="bg-rose-300 p-3 min-w-[100px] sm:absolute bottom-0 left-0">{post.category}</button>
-                  </div>
-                  <p className="text-xl tracking-wider text-rose-100 my-4">{post.desc}</p>
+              <Link
+                to={`/post/${post._id}`}
+                key={post._id}
+                className="flex h-fit flex-col  items-start justify-between bg-[#9d41ef] py-4 px-2 sm:px-8 rounded-md relative cursor-pointer"
+              >
+                <div className="w-full text-center mb-3 pb-2 border-b-2">
+                  <h1 className="text-xl sm:text-2xl font-normal sm:font-semibold  text-primary break-all whitespace-normal">{post.title}</h1>
                 </div>
-                <div className="w-full sm:w-[70%] rounded-lg overflow-hidden h-full">
-                  <img src={post.coverImage} alt="" className="w-full h-full object-cover" />
+                <div className="flex w-full items-center gap-4 sm:flex-row">
+                  <div className="w-full sm:w-[69%] my-4">
+                    <div className="flex flex-col justify-between  items-start">
+                      <p className="text-sm mt-0  font-light sm:text-xl tracking-wider text-rose-100 my-4 break-all whitespace-normal">{window.innerWidth < 640 // 640px is the breakpoint for "sm" in Tailwind
+                        ? post.desc.length > 26
+                          ? `${post.desc.slice(0, 26)}...`
+                          : post.desc
+                        : post.desc}</p>
+                      <button className="bg-rose-300 p-3 min-w-[100px] absolute sm:static bottom-0 left-0">
+                        {post.category}
+                      </button>
+                    </div>
+                  </div>
+                  <div className="w-full sm:w-[30%] rounded-lg overflow-hidden h-full">
+                    <img src={post.coverImage} alt="" className="w-full h-full object-cover" />
+                  </div>
                 </div>
               </Link>
             ))
+
           ) : (
             <p>No posts available.</p>
           )}

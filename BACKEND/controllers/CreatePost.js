@@ -6,12 +6,13 @@ const createPost = async (req, res) => {
     let coverURL = "";
 
     coverURL = await uploadImage(req.file?.path);
-    console.log(coverURL);
+
     const post = await Post.create({
       title: req.body.title,
       desc: req.body.desc,
       category: req.body.category,
-      coverImage: coverURL
+      coverImage: coverURL,
+      user: req.body.userId
     });
 
     console.log("hii");
