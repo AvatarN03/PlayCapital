@@ -23,6 +23,7 @@ const allowedOrigins = [process.env.FRONTEND_URL];
 const options = {
   origin: allowedOrigins,
   methods: ['GET', 'POST', 'DELETE'],
+  credentials: true
 };
 
 app.use(cors(options));

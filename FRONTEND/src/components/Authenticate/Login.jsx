@@ -39,7 +39,7 @@ const Login = ({ setLogSig, setMessage, setError }) => {
       
       setTimeout(() => {
         navigate("/")
-      }, 2000);
+      }, 1000);
 
     }
     else {
@@ -53,6 +53,7 @@ const Login = ({ setLogSig, setMessage, setError }) => {
     } catch (error) {
       
       console.log(error);
+      setError(error)
       
     }
    
