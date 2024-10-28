@@ -22,11 +22,12 @@ const Login = ({ setLogSig, setMessage, setError }) => {
 
   const loginCatch = async (e)=>{
     e.preventDefault();
+    const headers = { 'Content-Type': 'application/json' };
     console.log("hey");
     console.log(login);
     
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URI}api/login`, login);
+      const response = await axios.post(`${import.meta.env.VITE_API_URI}api/login`, login,{ headers});
     if (response.data.isSuccess) {
       setError("");
       setMessage('Login successful!');
