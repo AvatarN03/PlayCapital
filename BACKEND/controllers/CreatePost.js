@@ -12,10 +12,10 @@ const createPost = async (req, res) => {
       desc: req.body.desc,
       category: req.body.category,
       coverImage: coverURL,
-      user: req.body.userId
+      user: req.body.userId,
+      username: req.body.username
     });
 
-    console.log("hii");
 
     if (post) {
       return res

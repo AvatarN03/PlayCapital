@@ -36,7 +36,7 @@ const NoNavFooterLayout = () => {
 };
 
 const NotFound = () => {
-  return <h1 className='text-center text-sm sm:text-base md:text-xl ld:text-2xl min-h-screen flex justify-center items-center ' >404 - Page Not Found</h1>;
+  return <h1 className='text-center text-sm sm:text-base md:text-xl ld:text-2xl text-white min-h-screen flex justify-center items-center ' >404 - Page Not Found</h1>;
 };
 
 const RedirectToHTML = ({ file }) => {
@@ -98,6 +98,7 @@ const MainApp = () => {
 
 
           {/* The game Section withour Header  */}
+          <Route element={<PrivateRoute />}>
           <Route element={<NoNavFooterLayout />}>
             <Route path="/features/memorygame" element={<RedirectToHTML file="memory-game.html" />} />
             <Route path="/features/ruleboard" element={<IncomeBracket />} />
@@ -108,6 +109,7 @@ const MainApp = () => {
             <Route path="/gamehigh" element={<RedirectToHTML file="gamehigh.html" />} />
             <Route path="/gamelow" element={<RedirectToHTML file="gamelow.html" />} />
             <Route path="/game" element={<RedirectToHTML file="game.html" />} />
+          </Route>
           </Route>
 
           <Route path="*" element={<NotFound />} />

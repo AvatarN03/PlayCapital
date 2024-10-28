@@ -33,6 +33,7 @@ const CreateBlog = () => {
         postData.append('desc', e.target.desc.value);
         postData.append('category', selectedTopic);
         postData.append("userId", data.auth.user._id)
+        postData.append('username', data.auth.user.username);
 
         if (cover) {
             postData.append('coverImage', cover);
@@ -112,6 +113,7 @@ const CreateBlog = () => {
                     <textarea
                         name="desc"
                         id="desc"
+                        placeholder='Enter the Description ...'
                         rows={5}
                         className="w-full min-h-5 bg-rose-50 rounded-md resize-none text-xl mb-16 p-3 border-slate-200 outline-none"
                     />

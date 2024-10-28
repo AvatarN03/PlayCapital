@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="w-full bg-[#5827B7] h-fit pt-2 rounded-sm relative">
       <div className="absolute bottom-4 right-4 rounded-3xl p-4 bg-rose-300 cursor-pointer" onClick={screenTop}><ArrowUpward/></div>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 lg:px-0">         
-        <h1 className="ml-4 text-2xl md:text-3xl  font-semibold tracking-wider heading text-red-300">PlayCaptial</h1>      
+        <h1 className="ml-4 text-2xl md:text-3xl flex items-center gap-2 font-semibold tracking-wider heading text-red-300"><img className='hidden sm:block sm:w-14 md:w-16 lg:w-24 object-cover h-auto' src="./assets/logo.jpeg" alt="" />  PlayCaptial</h1>      
           
           <button
             type="button"

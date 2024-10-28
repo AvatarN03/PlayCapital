@@ -4,11 +4,11 @@ const uploadImage = require("../utils/uploadCloudinary");
 const EditPost = async (req, res) => {
   const { id } = req.params;
   let coverURL = "";
-  console.log("hello1");
+
   
   console.log(req.body);
   console.log(req.body.cover);
-  console.log("hello2");
+
   
 
   try {

@@ -88,7 +88,7 @@ export const navItems = [
   export const memberNames = [
     {
       name: "Manasvi Shirshat",
-      image:"/assets/naidu.jpg",
+      image:"/assets/manasvi.JPG",
       desc: " A data analytics expert, specializing in extracting insights from data to guide project decisions. Her analytical mindset adds precision to the project’s strategy.",
       social: {
         linked: "kfdkfjkdlfjkdjfjfkljdf",
@@ -124,7 +124,7 @@ export const navItems = [
     },
     {
       name: "Praniti Kubal",
-      image:"/assets/naidu.jpg",
+      image:"/assets/praniti.jpeg",
       desc: "A detail-oriented project manager, ensuring smooth workflow and effective communication among the team. She is adept at organizing tasks and meeting deadlines.",
       social: {
         linked: "kfdkfjkdlfjkdjfjfkljdf",
@@ -205,6 +205,7 @@ export const navItems = [
       }
       
         const response = await axios.post(`${import.meta.env.VITE_API_URI}api/signup`, formData,{
+          
           headers: {
             'Content-Type':'multipart/form-data'  
           },

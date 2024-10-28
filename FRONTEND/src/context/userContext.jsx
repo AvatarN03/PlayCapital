@@ -14,7 +14,7 @@ export default function userContextProvider({children}){
           // Fetch user from backend to validate token
           const fetchUser = async () => {
             try {
-              const response = await fetch(`${import.meta.env.VITE_API_URI}/api/user`, {
+              const response = await fetch(`${import.meta.env.VITE_API_URI}api/user`, {
                 method: 'GET',
                 headers: {
                   Authorization: `Bearer ${token}`,
