@@ -26,7 +26,7 @@ const Login = ({ setLogSig, setMessage, setError }) => {
     console.log(login);
     
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URI}/api/login`, login);
+      const response = await axios.post(`${import.meta.env.VITE_API_URI}api/login`, login);
     if (response.data.isSuccess) {
       setError("");
       setMessage('Login successful!');
