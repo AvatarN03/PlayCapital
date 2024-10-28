@@ -18,10 +18,11 @@ const app = express();
 // The Port where the backend i.e. Server is running
 const port = process.env.PORT || 3000;
 
-const allowedOrigins = ['https://play-capital-five.vercel.app/'];
+// const allowedOrigins = ['https://play-capital-five.vercel.app/'];
 
 const options = {
-  origin: allowedOrigins,
+  // origin: allowedOrigins,
+  origin:"*",
   methods: ['GET', 'POST', 'DELETE'],
   credentials: true
 };
