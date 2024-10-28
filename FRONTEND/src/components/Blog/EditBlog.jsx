@@ -19,7 +19,7 @@ const EditPost = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URI}/create/post/${id}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URI}create/post/${id}`);
         setPost(response.data.post);
         setSelectedTopic(response.data.post.category);
         console.log(response.data.post);
@@ -57,7 +57,7 @@ const EditPost = () => {
   console.log(JSON.stringify(formData));
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URI}/create/post/${id}`, formData,{
+      const response = await axios.post(`${import.meta.env.VITE_API_URI}create/post/${id}`, formData,{
         headers: {
           'Content-Type':'multipart/form-data'  
         },
@@ -77,7 +77,7 @@ const EditPost = () => {
     
     if (isConfirmed) {
       try {
-        const response = await axios.delete(`${import.meta.env.VITE_API_URI}/create/post/${id}`);
+        const response = await axios.delete(`${import.meta.env.VITE_API_URI}create/post/${id}`);
   
         if (response.data.message === 'Post deleted successfully') {
           console.log('Post deleted successfully');

@@ -204,7 +204,7 @@ export const navItems = [
         console.log(`${key}: ${value}`);
       }
       
-        const response = await axios.post(`${import.meta.env.VITE_API_URI}/api/signup`, formData,{
+        const response = await axios.post(`${import.meta.env.VITE_API_URI}api/signup`, formData,{
           headers: {
             'Content-Type':'multipart/form-data'  
           },

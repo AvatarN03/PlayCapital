@@ -17,7 +17,7 @@ const ViewPost = () => {
     useEffect(()=>{
         const fetchPost = async()=>{
             console.log(id);
-            const response = await axios.get(`${import.meta.env.VITE_API_URI}/create/post/${id}`)
+            const response = await axios.get(`${import.meta.env.VITE_API_URI}create/post/${id}`)
             console.log(response);
             
             if(!(response.data.isSuccess)){

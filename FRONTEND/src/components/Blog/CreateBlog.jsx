@@ -41,7 +41,7 @@ const CreateBlog = () => {
         
 
         try {
-            const response = await axios.post(`${import.meta.env.VITE_API_URI}/create/createPost`, postData,{
+            const response = await axios.post(`${import.meta.env.VITE_API_URI}create/createPost`, postData,{
                 headers: {
                     'Content-Type':'multipart/form-data'  
                   },

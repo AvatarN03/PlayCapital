@@ -13,7 +13,7 @@ const Blog = () => {
     const fetchPosts = async () => {
       try {
 
-        let url = `${import.meta.env.VITE_API_URI}/create/post`;
+        let url = `${import.meta.env.VITE_API_URI}create/post`;
 
         if (category !== 'All') {
           url += `?category=${category}`;
