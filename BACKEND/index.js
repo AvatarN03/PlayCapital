@@ -18,7 +18,14 @@ const app = express();
 // The Port where the backend i.e. Server is running
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+const allowedOrigins = [process.env.FRONTEND_URL];
+
+const options = {
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'DELETE'],
+};
+
+app.use(cors(options));
 
 
 //The enable the file transfer 
