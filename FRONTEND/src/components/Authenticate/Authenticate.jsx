@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Authenticate = () => {
   const [logsig, setLogSig] = useState(false);
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
+
 
   return (
     <section className='auth_bg grid place-content-center min-h-screen w-[100vw] transition-transform duration-150 ease-in'>
@@ -16,7 +15,7 @@ const Authenticate = () => {
         !logsig? " Register Here": "Welcome Back"}</h1>
 
         {
-          logsig ? <Login setLogSig={setLogSig} setMessage={setMessage} setError={setError} /> : <Signup setLogSig={setLogSig} setMessage={setMessage} setError={setError}  />}
+          logsig ? <Login setLogSig={setLogSig}  /> : <Signup setLogSig={setLogSig} />}
       </div>
       <Link className='rounded-md p-2 bg-neutral-200 text-gray-700 fixed right-4 top-4' to={"/"} style={{zIndex:"500"}}>Return Home</Link >
       

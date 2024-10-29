@@ -6,10 +6,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import {  loginInitial } from '../../utls/features'
 import { userContext } from '../../context/userContext'
 import axios from 'axios'
+import { CircularProgress } from '@mui/material'
 
-const Login = ({ setLogSig, setMessage, setError }) => {
+const Login = ({ setLogSig}) => {
   const [login, setLogin] = useState(loginInitial);
   const data = useContext(userContext)
+  const [message, setMessage] = useState("");
+  const [process, setProcess] = useState(false);
   const navigate = useNavigate();
 
 
@@ -22,20 +25,17 @@ const Login = ({ setLogSig, setMessage, setError }) => {
 
   const loginCatch = async (e)=>{
     e.preventDefault();
+    setProcess(true);
     const headers = { 'Content-Type': 'application/json' };
-    console.log("hey");
-    console.log(login);
     
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URI}api/login`, login,{ headers});
     if (response.data.isSuccess) {
-      setError("");
-      setMessage('Login successful!');
       
-      console.log(response.data);
-      console.log(response.data.user);
+      setMessage(response.data.msg);
       data.setAuth(response.data)
       localStorage.setItem('Playtoken', response.data.token);
+      
       
       
       setTimeout(() => {
@@ -44,17 +44,19 @@ const Login = ({ setLogSig, setMessage, setError }) => {
 
     }
     else {
-      setError(response.data.error)
+      setMessage(response.data.msg)
       setTimeout(()=>{
         setLogin(loginInitial)
-        setError("")
+        setMessage("try again ..")
 
       },1000)
     }
+    setProcess(false);
     } catch (error) {
       
       console.log(error);
-      setError(error)
+      setMessage(error)
+      setProcess(false);
       
     }
    
@@ -74,7 +76,8 @@ const Login = ({ setLogSig, setMessage, setError }) => {
         <form action="" onSubmit={loginCatch}>
           <Input label="Username" value={login.username} name="username" place="Enter the Username ..." onChange={loginChange} />
           <Input label="Password" value={login.password} type='password' name="password" place="Enter the Password " onChange={loginChange} />
-          <Button name="Login" />
+          {message && <p className="text-red-500 text-sm text-center">{message}</p>}
+          <div className="flex justify-center items-center my-3">{process ? <CircularProgress  sx={{color:"red"}}/> :<Button name="Login" />}</div>
         </form>
         <p className='text-center text-slate-300 font-lights'>OR</p>
         <button className='bg-white text-black w-full p-3 rounded-lg' onClick={() => setLogSig(false)}>SignUp</button>

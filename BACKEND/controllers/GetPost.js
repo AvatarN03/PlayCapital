@@ -22,7 +22,7 @@ const getPosts = async (req,res)=>{
 
         return res.status(200).json({isSuccess:true, posts, msg:"Post gotit"})
     }
-    return res.status(400).json({isSuccess:false,  error:"Something went wrong, Please try again"})
+    return res.status(400).json({isSuccess:false,  msg:"Something went wrong, Please try again"})
 }
 
 module.exports = getPosts;

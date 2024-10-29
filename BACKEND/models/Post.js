@@ -17,7 +17,7 @@ const postSchema = new mongoose.Schema(
     },
     coverImage: {
       type: String,
-      default: "https://cloud.mongodb.com/v2#/org/66c0863aaea46b2947b8cfa1/",
+      default: "",
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,

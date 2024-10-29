@@ -18,10 +18,7 @@ require('dotenv').config();
           const response = await cloudinary.uploader.upload(localFileStorage, {
             resource_type: "auto",
           });
-    
-          console.log(response.url);
-          console.log(response.url);
-          
+              
           return response.url
         } catch (error) {
     

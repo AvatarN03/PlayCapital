@@ -188,52 +188,7 @@ export const navItems = [
     
   }
 
-  export const signupCatch = async(signup,setLogSig, setSignUp,setMessage, setError) => {
-    console.log("sign");
-    console.log(import.meta.env.VITE_API_URI); // should output your API URI
 
-    const formData = new FormData();
-    formData.append('username', signup.username);
-    formData.append('password', signup.password);
-    formData.append('email', signup.email);
-    if(signup.avatar){
-      formData.append('avatar', signup.avatar);
-    }
-    try {
-      for (let [key, value] of formData.entries()) {
-        console.log(`${key}: ${value}`);
-      }
-      
-        const response = await axios.post(`${import.meta.env.VITE_API_URI}api/signup`, formData,{
-          
-          headers: {
-            'Content-Type':'multipart/form-data'  
-          },
-        });
-        console.log(response);
-        
-        if (response.data.isSuccess) {
-            setError(""); 
-            setMessage('Signup successful!');
-            setLogSig("true"); 
-            
-            
-        } else {
-            setError(response.data.error); // Ensure this is a string
-            setTimeout(()=>{
-              setError("")
-            }, 2000)
-            
-        }
-        setSignUp(signInitial);
-    } catch (error) {
-        setError(error.message || 'An error occurred');
-        setTimeout(()=>{
-          setError("")
-        },2000) // Extract the message or provide a fallback
-    }
-    
-  }
   
   export const options = [
     { id: 1, topic: "stockMarket" },

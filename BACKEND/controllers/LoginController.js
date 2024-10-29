@@ -10,7 +10,6 @@ const LoginController = async (req, res) => {
 
   try {
     const { username, password } = req.body;
-    console.log(req.body);
     
     // based on the username the user is fetched
     const user = await User.findOne({ username });
@@ -18,13 +17,13 @@ const LoginController = async (req, res) => {
     if (!user) {
       return res
         .status(200)
-        .json({ isSuccess: false, error: "User not found" });
+        .json({ isSuccess: false, msg: "User not found" });
     }
 
     const isMatch = bcrypt.compareSync(password, user.password);
     if (!isMatch) {
       console.log("Passwords Dont Match!");
-      return res.status(200).json({isSuccess:false, error:"Password is InCorrect"}); // Passwords match
+      return res.status(200).json({isSuccess:false, msg:"Password is InCorrect"}); // Passwords match
     }
 
     const token =jwt.sign({ username: user.username, id: user.id }, process.env.JWT_SECRET, {
@@ -37,7 +36,7 @@ const LoginController = async (req, res) => {
      
     return res
       .status(200)
-      .json({ error: "The Process failed , please try again" });
+      .json({ msg: "The Process failed , please try again" });
   }
 };
 
@@ -55,10 +54,9 @@ const SignController = async (req, res) => {
     if (existingUser) {
       return res
         .status(200)
-        .json({ isSuccess: false, error: "User already exists" });
+        .json({ isSuccess: false, msg: "User already exists" });
     }
     const avatarURL = await uploadImage(req.file?.path);
-    console.log(avatarURL);
 
     // Create a new user
 
@@ -76,14 +74,14 @@ const SignController = async (req, res) => {
     console.error(error);
     return res
       .status(500)
-      .json({ error: "Something went wrong, please try again" });
+      .json({ msg: "Something went wrong, please try again" });
   }
 };
 
 const TokenUser = async(req,res)=>{
   const user = await User.findById(req.user.id);
   if (!user) {
-    return res.status(200).json({isSuccess:false,  error: 'User not found' });
+    return res.status(200).json({isSuccess:false,  msg: 'User not found' });
   }
   user.password = undefined;
   return res.json({ isSuccess:true, user });

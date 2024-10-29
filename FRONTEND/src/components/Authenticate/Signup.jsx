@@ -4,10 +4,13 @@ import Button from './Button'
 import { Google, Person } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
 import { signInitial, signupCatch } from '../../utls/features'
+import { CircularProgress } from '@mui/material'
 import axios from 'axios'
 
-const Signup = ({setLogSig, setMessage, setError}) => {
+const Signup = ({setLogSig}) => {
   const [signup, setSignUp] = useState(signInitial);
+  const [message, setMessage] = useState("");
+  const [process, setProcess] = useState(false);
 
 
 
@@ -26,8 +29,46 @@ const Signup = ({setLogSig, setMessage, setError}) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+    setProcess(true);
+    const formData = new FormData();
+    formData.append('username', signup.username);
+    formData.append('password', signup.password);
+    formData.append('email', signup.email);
+    if(signup.avatar){
+      formData.append('avatar', signup.avatar);
+    }
+    try {
+          
+        const response = await axios.post(`${import.meta.env.VITE_API_URI}api/signup`, formData,{
+          
+          headers: {
+            'Content-Type':'multipart/form-data'  
+          },
+        });
+        
+        if (response.data.isSuccess) {
+            setMessage(response.data.msg);
+            setLogSig("true"); 
+            
+            
+        } else {
+            setMessage(response.data.msg); 
+            setTimeout(()=>{
+              setMessage("try again ..")
+            }, 1000)
+            
+        }
+        setProcess(false); // Reset process after successful submission
+        
+    } catch (error) {
+        setProcess(false); 
+        setMessage(error);
+        setTimeout(()=>{
+          setMessage("")
+        },1000) // Extract the message or provide a fallback
+    }
+    setSignUp(signInitial);
 
-    signupCatch(signup, setSignUp,setLogSig, setMessage, setError);
   };
   
 
@@ -50,7 +91,8 @@ const Signup = ({setLogSig, setMessage, setError}) => {
             <Input key={1} label="Username" value={signup.username} name="username" place="Enter the Username ..."  onChange={signUpChange} />
             <Input key={2} label="Email" value={signup.email} type='email' name="email" place="Enter the Email.. " onChange={signUpChange}   />
             <Input key={3} label="Password" value={signup.password} type='password' name="password" place="Enter the Password "  onChange={signUpChange}  />
-           <Button name="Signup" />
+            {message && <p className="text-red-500 text-sm text-center">{message}</p>}
+            <div className="flex justify-center items-center my-3">{process ? <CircularProgress  sx={{color:"red"}}/> :<Button name="Signup" />}</div>
             </form>
             <p className='text-center text-slate-300 font-lights'>OR</p>
             <button className='bg-white text-black w-full p-3 rounded-lg' onClick={()=> setLogSig(true)}>Login</button>

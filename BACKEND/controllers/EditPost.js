@@ -5,12 +5,6 @@ const EditPost = async (req, res) => {
   const { id } = req.params;
   let coverURL = "";
 
-  
-  console.log(req.body);
-  console.log(req.body.cover);
-
-  
-
   try {
     // Upload the cover image (if provided)
     if (req.file) {
