@@ -100,7 +100,7 @@ export const navItems = [
     },
     {
       name: "Chirag Dulera",
-      image:"/assets/naidu.jpg",
+      image:"/assets/chirag.jpeg",
       desc: "A tech enthusiast with strong problem-solving skills, specializing in backend development. He ensures that the project’s infrastructure is robust and scalable.",
       social: {
         linked: "kfdkfjkdlfjkdjfjfkljdf",

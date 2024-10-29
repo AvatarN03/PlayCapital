@@ -25,7 +25,7 @@ const ViewPost = () => {
             }
             else{
                 setPost(response.data.post);
-                if(response.data.post.userId == data.auth.user._id ){
+                if(response.data.post.user == data.auth.user._id ){
                     setIsEditable(true);
                     console.log(response.data.post.userId);
                     
